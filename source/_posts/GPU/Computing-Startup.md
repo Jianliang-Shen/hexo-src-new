@@ -22,11 +22,6 @@ GPU, Compute and AI.
 
 - [目录](#目录)
 - [资料汇总](#资料汇总)
-  - [Pytorch](#pytorch)
-  - [Cuda](#cuda)
-  - [Jetson 嵌入式AI](#jetson-嵌入式ai)
-  - [GPU driver](#gpu-driver)
-  - [Github 资源](#github-资源)
 - [PyTorch 知识点整理](#pytorch-知识点整理)
 - [安装 Pytorch 1.6 环境（CPU版本）](#安装-pytorch-16-环境cpu版本)
 - [安装 Pytorch 2.x 环境（CUDA版本）](#安装-pytorch-2x-环境cuda版本)
@@ -38,8 +33,6 @@ GPU, Compute and AI.
 
 ## 资料汇总
 
-### Pytorch
-
 | 链接  | 说明 |
 | ---- | --- |
 | [**《深度学习框架PyTorch：入门与实战》代码**](https://github.com/chenyuntc/pytorch-book)| 这个适合开始阶段，参考[PyTorch 知识点整理](#pytorch-知识点整理)。此书配套1.6版本的pytorch，参考[安装 Pytorch 1.6 环境（CPU版本）](#安装-pytorch-16-环境cpu版本)和[Pytorch Book VScode 环境配置](#pytorch-book-vscode-环境配置) |
@@ -50,43 +43,14 @@ GPU, Compute and AI.
 | [Pytorch Examples](https://github.com/pytorch/examples)| 围绕 pytorch 的视觉、文本、强化学习等方面的一组示例。 |
 | [Pytorch 源码仓库](https://github.com/pytorch/pytorch)| 具有强大 GPU 加速的 Python 张量和动态神经网络。 |
 
-### Cuda
+| <span style="display:inline-block;width:250px">Cuda</span> | <span style="display:inline-block;width:300px">Jetson 嵌入式AI</span> | <span style="display:inline-block;width:255px">GPU driver</span> |
+| :--: | :--: | :--: |
+| [CUDA 官方文档](https://docs.nvidia.com/cuda/)<br />[CUDA Runtime API](https://docs.nvidia.com/cuda/cuda-runtime-api/index.html)<br />[CUDA Samples](https://github.com/NVIDIA/cuda-samples) | [NVIDIA Jetson-projects](https://developer.nvidia.com/embedded/community/jetson-projects)<br />[Yahboom官方教程 提取码lguu](https://www.yahboom.com/study/Jetson-Orin-NANO) | [Nvidia KMD driver](https://github.com/NVIDIA/open-gpu-kernel-modules)<br />[AMD KMD driver](https://github.com/torvalds/linux/tree/master/drivers/gpu/drm/amd/amdgpu) |
 
-[CUDA 官方文档](https://docs.nvidia.com/cuda/)
-[CUDA Runtime API](https://docs.nvidia.com/cuda/cuda-runtime-api/index.html)
-[CUDA Samples](https://github.com/NVIDIA/cuda-samples)
-
-<details>
-<summary>点击查看CUDA文档</summary>
-
-<iframe src="https://docs.nvidia.com/cuda/" width="100%" height="800" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
-
-</details>
-
-<details>
-<summary>点击查看PyTorch文档</summary>
-
-<iframe src="https://pytorch.org/tutorials/beginner/basics/intro.html" width="100%" height="800" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
-
-</details>
-
-### Jetson 嵌入式AI
-
-[NVIDIA Jetson-projects](https://developer.nvidia.com/embedded/community/jetson-projects)
-[Yahboom官方教程 提取码lguu](https://www.yahboom.com/study/Jetson-Orin-NANO)
-
-### GPU driver
-
-[Nvidia KMD driver](https://github.com/NVIDIA/open-gpu-kernel-modules)
-[AMD KMD driver](https://github.com/torvalds/linux/tree/master/drivers/gpu/drm/amd/amdgpu)
-
-### Github 资源
-
-<details>
-<summary>点击此处查看资源汇总</summary>
+{% fold @Github 资源汇总 %}
 
 | 仓库                                     |说明                 |
-| --------------------------------------- | ------------------ |
+| :---------------------------------------: | ------------------ |
 | **1. AI/AGI/AIoT** |  |
 | [**HuggingFace/Transformers<br />★★★★★**](https://github.com/huggingface/transformers) | 著名论文[Attention Is All You Need](https://arxiv.org/abs/1706.03762) 提出的 Transformers  提供数千个预训练模型，用于执行不同模态（例如文本、视觉和音频）的任务。这些模型可应用于：<br />1. 📝 文本，用于 100 多种语言的文本分类、信息提取、问答、摘要、翻译和文本生成等任务。<br />2. 🖼️ 图像，用于图像分类、对象检测和分割等任务。<br />3. 🗣️ 音频，用于语音识别和音频分类等任务。<br />Transformers 模型还可以执行多种模态组合的任务，例如表格问答、光学字符识别、从扫描文档中提取信息、视频分类和视觉问答。 |
 | [**Karpathy/llm.c<br />★★★★★**](https://github.com/karpathy/llm.c)| 简单、纯 C/CUDA 的 LLM，无需 245MB 的 PyTorch 或 107MB 的 cPython。当前重点是预训练，特别是重现 GPT-2 和 GPT-3 迷你剧，以及 train_gpt2.py 中的并行 PyTorch 参考实现。测试见：[llm.c](http://jianliang-shen.cn/2024/04/28/llm.c/) |
@@ -125,23 +89,33 @@ GPU, Compute and AI.
 | [CS EBook<br />★★★](https://github.com/lining808/CS-Ebook) | 本储存库是一些高质量的计算机科学与技术书籍推荐书单，需要学习的可以按照此书单进行学习进阶，包含了计算机大多数软件相关方向。而且敢承诺一直更新。 |
 | [zhoucz97/myLearning](https://github.com/zhoucz97/myLearning) | 记录个人的学习历程。包括但不限于算法、机器学习、论文写作等。 |
 
-</details>
+{% endfold %}
+
+{% fold @PyTorch文档 %}
+
+<iframe src="https://pytorch.org/tutorials/beginner/basics/intro.html" width="100%" height="800" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
+
+{% endfold %}
+
+{% fold @CUDA文档 %}
+
+<iframe src="https://docs.nvidia.com/cuda/" width="100%" height="800" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
+
+{% endfold %}
 
 ## PyTorch 知识点整理
 
 《深度学习框架 PyTorch: 入门与实战》
 
-<details>
-<summary>Chapter 2, 简单介绍 tensor 和构建 cifar-10 训练模型</summary>
+{% fold @Chapter 2, 简单介绍 tensor 和构建 cifar-10 训练模型 %}
 
 - 安装Pytorch
 - 基本操作，如cat等
 - 准备一个cifar-10模型，并训练推理
 
-</details>
+{% endfold %}
 
-<details>
-<summary>Chapter 3, 介绍 tensor</summary>
+{% fold @Chapter 3, 介绍 tensor %}
 
 | 概要                   | 内容               |
 | ---------------------- | -------------------|
@@ -160,14 +134,13 @@ GPU, Compute and AI.
 | autograd               | requires_grad=True, retain_graph=None, is_leaf, backward()    |
 | 用autograd实现线性回归 |  自动backward, 梯度下降  |
 
-</details>
+{% endfold %}
 
-<details>
-<summary>Chapter 4, 神经网络工具箱nn</summary>
+{% fold @Chapter 4, 神经网络工具箱nn %}
 
 torch.nn是专门为深度学习而设计的模块。torch.nn的核心数据结构是`Module`，它是一个抽象的概念，既可以表示神经网络中的某个层（layer），也可以表示一个包含很多层的神经网络。在实际使用中，最常见的做法是继承`nn.Module`，从而编写自己的网络/层。多层感知机的网络结构如图所示，它由两个全连接层组成，采用$sigmoid$函数作为激活函数（图中没有画出）。
 
-![](/img/post_pics/ai/multi_perceptron.png)
+![神经网络](/img/post_pics/ai/multi_perceptron.png)
 
 PyTorch内部实现了神经网络中绝大多数的layer，这些layer都继承于`nn.Module`，封装了可学习参数`parameter`，并实现了`forward`函数。同时，大部分layer都专门针对GPU运算进行了CuDNN优化，其速度和性能都十分优异。关注每一层的信息有：
 
@@ -177,16 +150,15 @@ PyTorch内部实现了神经网络中绝大多数的layer，这些layer都继承
 
 图像nn包括，卷积层（Conv）、池化层（Pool），池化方式又分为平均池化（AvgPool）、最大值池化（MaxPool）、自适应池化（AdaptiveAvgPool）等。而卷积层除了常用的前向卷积之外，还有逆卷积（TransposeConv）。卷积神经网络的本质就是卷积层、池化层、激活层以及其他层的叠加。池化层可以看作是一种特殊的卷积层，其主要用于下采样，增加池化层可以在保留主要特征的同时降低参数量，从而一定程度上防止了过拟合。池化层没有可学习参数，它的weight是固定的。在`torch.nn`工具箱中封装好了各种池化层，常见的有最大池化（MaxPool）和平均池化（AvgPool)。
 
-</details>
+{% endfold %}
 
 ## 安装 Pytorch 1.6 环境（CPU版本）
 
 <https://pytorch.org/get-started/previous-versions/>
 
-<details>
-<summary>点击此处查看步骤</summary>
+{% fold @点击此处查看步骤 %}
 
-![](/img/post_pics/ai/Pytorch.png)
+![Pytorch](/img/post_pics/ai/Pytorch.png)
 
 **安装 Anaconda. 下载地址:** <https://www.anaconda.com/download>
 
@@ -422,14 +394,13 @@ source myenv/bin/activate
 pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-</details>
+{% endfold %}
 
 ## 安装 Pytorch 2.x 环境（CUDA版本）
 
 在RTX4070S windows中配置WSL相关的AI环境，包括CUDA，PyTorch，Cudnn等
 
-<details>
-<summary>点击此处查看步骤</summary>
+{% fold @步骤 %}
 
 **安装WSL/Docker/Nvidia：**
 [Windows 下让 Docker Desktop 关联上 NVidia GPU](https://blog.csdn.net/ndscvipuser/article/details/136610169)
@@ -513,12 +484,11 @@ sudo apt-get -y install cudnn-cuda-12
 cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 ```
 
-</details>
+{% endfold %}
 
 ## Pytorch Book VScode 环境配置
 
-<details>
-<summary>点击此处查看步骤</summary>
+{% fold @步骤 %}
 
 ```bash
 git clone git@github.com:chenyuntc/pytorch-book.git
@@ -542,7 +512,7 @@ VScode安装插件
 
 再次点击左侧运行，弹出要安装pykernel包，点击安装完成后，可以在右上角看到环境和python版本，也可以点击此处继续更换环境。
 
-</details>
+{% endfold %}
 
 ## Examples
 
@@ -554,8 +524,7 @@ VScode安装插件
 
 参考Pytorch教程: [Quick Start](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html)
 
-<details>
-<summary>训练测试步骤</summary>
+{% fold @训练步骤 %}
 
 1. 下载数据集
 2. 数据预处理等[Data Tutorial](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html)
@@ -572,8 +541,9 @@ VScode安装插件
 6. 测试，对测试集预测，计算预测结果争取率
 7. 保存模型，[Save & Load & Run](https://pytorch.org/tutorials/beginner/basics/saveloadrun_tutorial.html)
 
-<details>
-<summary>Test models</summary>
+{% endfold %}
+
+{% fold @测试模型 %}
 
 ```python
 import torch
@@ -642,9 +612,7 @@ with torch.no_grad():
     print(f'Predicted: "{predicted}", Actual: "{actual}"')
 ```
 
-</details>
-
-</details>
+{% endfold %}
 
 ### Cifar-10
 
