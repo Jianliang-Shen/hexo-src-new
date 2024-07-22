@@ -5,7 +5,7 @@ tags:
     - Linux
     - Kconfig
 categories: 
-    - 操作系统
+    - OS
 ---
 
 Kconfig是一个常用于Linux内核开发的配置系统。它允许开发人员根据特定需求来自定义内核的编译选项和功能。

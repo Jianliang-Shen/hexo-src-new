@@ -4,8 +4,9 @@ title: GPU Architecture
 index_img: /img/post_pics/gpu/arch/19.png
 date: 2024-07-17 09:57:13
 tags:
-    - 架构
+    - Arch
     - CUDA
+    - GPU
 categories: 
     - GPU
 ---

@@ -6,7 +6,7 @@ tags:
     - C/C++
     - Linux
 categories: 
-    - 面试
+    - Interview
 ---
 关于C/C++重点知识点汇总。
   

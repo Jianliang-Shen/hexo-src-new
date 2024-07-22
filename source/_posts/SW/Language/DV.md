@@ -5,7 +5,7 @@ date: 2021-01-24 12:50:55
 tags:
     - SystemVerilog
 categories: 
-    - 编程语言
+    - Language
 ---
 
 验证就好比测试，不知道将来还需要多少人才。

@@ -3,7 +3,7 @@ layout: post
 title: GPU Note
 date: 2024-04-24 10:28:15
 tags: 
-    - 并行计算
+    - Compute
     - GPU
 categories: 
     - GPU

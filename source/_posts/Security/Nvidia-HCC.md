@@ -5,12 +5,14 @@ date: 2024-04-04 10:26:14
 index_img: /img/post_pics/HCC/7.png
 archive: true
 tags: 
-    - 并行计算
+    - Compute
     - TEE
     - GPU
     - TDX
+    - Confidential Compute
+    - Security
 categories: 
-    - 安全
+    - Security
 ---
 
 NV TEE指代Nvidia Hopper Confidential Compute技术。该实现基于CPU TEE硬件技术、操作系统内核扩展、虚拟机安全扩展、GPU TEE技术和GPU内存加密等技术。

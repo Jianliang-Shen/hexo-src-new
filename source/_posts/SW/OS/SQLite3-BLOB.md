@@ -2,12 +2,12 @@
 title: SQLite3 BLOB增删改查编写
 date: 2020-06-20 17:59:33
 tags: 
-    - 数据库
+    - Database
     - Linux
     - C/C++
-    - 操作系统
+    - OS
 categories: 
-    - 操作系统
+    - OS
 ---
 
 SQLite 是一个软件库，实现了自给自足的、无服务器的、零配置的、事务性的SQL数据库引擎。SQLite是在世界上最广泛部署的SQL数据库引擎。SQLite源代码不受版权限制。

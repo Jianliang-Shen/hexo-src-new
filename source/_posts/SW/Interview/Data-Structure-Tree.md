@@ -3,9 +3,9 @@ title: C语言数据结构--树与二叉树
 date: 2020-05-30 10:01:14
 tags: 
     - C/C++
-    - 数据结构
+    - Data Structure
 categories: 
-    - 算法/数据结构
+    - Algorithm
 ---
 介绍二叉树的定义使用，以及一些算法和力扣例题。
 

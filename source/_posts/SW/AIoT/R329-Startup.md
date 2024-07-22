@@ -4,10 +4,10 @@ date: 2021-07-27 11:23:11
 index_img: /img/post_pics/r329/9.jpeg
 tags: 
     - Linux
-    - 算法
+    - Algorithm
     - OpenCV
 categories: 
-    - 边缘计算
+    - AIoT
 ---
 
 R329的板子到手后折腾了几天，将前期学习的步骤简单记录一下。

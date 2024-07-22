@@ -5,7 +5,7 @@ tags:
     - Linux
     - U-Boot
 categories: 
-    - 嵌入式
+    - IoT
 ---
 
 为了让ARM启动时从SD-card搬运数据然后转NAND Flash启动，需要重新配置创龙提供的2014版本的Uboot源码文件.

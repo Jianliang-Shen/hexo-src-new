@@ -7,7 +7,7 @@ tags:
     - RTOS
     - Zephyr
 categories: 
-    - 操作系统
+    - OS
 ---
 
 zephyr是一个强大的嵌入式跨平台开源操作系统，有丰富的模块和完善的文档。

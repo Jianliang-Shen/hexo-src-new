@@ -4,7 +4,7 @@ title: CUDA并行程序设计
 index_img: /img/post_pics/cuda/book.jpeg
 date: 2024-04-04 10:28:15
 tags: 
-    - 并行计算
+    - Compute
     - GPU
     - CUDA
 categories: 

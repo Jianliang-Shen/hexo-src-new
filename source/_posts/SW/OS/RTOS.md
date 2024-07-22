@@ -5,7 +5,7 @@ index_img: /img/post_pics/index_img/os_1.png
 tags: 
     - RTOS
 categories: 
-    - 操作系统
+    - OS
 ---
 本章节将介绍各类操作系统的特点。
 <!-- <iframe src="https://hexo.fluid-dev.com/" width="100%" height="500" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe> -->

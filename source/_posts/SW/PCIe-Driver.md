@@ -3,8 +3,9 @@ title: PCI设备命令
 date: 2024-05-27 19:11:42
 tags:
     - Linux
+    - Driver
 categories:
-    - 软件
+    - Software
 ---
 
 分享：读取GPU设备信息的常用指令

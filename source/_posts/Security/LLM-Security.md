@@ -7,8 +7,10 @@ archive: true
 tags:
     - LLM
     - TEE
+    - Confidential Compute
+    - Security
 categories: 
-    - 安全
+    - Security
 ---
 
 OpenAI 的 GPT 系列大语言模型的兴起与应用，也带来了诸如数据泄露、数据滥用、模型被攻击和知识产权被窃取等一系列隐私和安全风险或挑战。

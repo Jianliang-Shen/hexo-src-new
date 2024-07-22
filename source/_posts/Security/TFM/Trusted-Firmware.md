@@ -4,12 +4,13 @@ date: 2021-05-28 20:59:25
 index_img: /img/post_pics/index_img/tfm_logo.png
 tags:
     - TF-M
-    - 固件
+    - Firmware
     - TEE
     - PSA
     - Arm
+    - Security
 categories:
-    - 安全
+    - Security
 ---
 
 <!-- more -->

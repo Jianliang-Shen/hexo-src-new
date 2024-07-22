@@ -6,7 +6,7 @@ tags:
     - Arm
     - Linux
 categories: 
-    - 操作系统
+    - OS
 ---
 
 Win10可以支持Ubuntu子系统，再也不需要虚拟机!

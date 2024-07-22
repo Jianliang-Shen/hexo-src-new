@@ -7,7 +7,7 @@ tags:
     - Vscode
     - Debug
 categories: 
-    - 软件
+    - Software
 ---
 
 There is an easy way to debug TF-M when using VScode, not DS5. It can be implemented in Ubuntu/MacOS(M silicon) environments.

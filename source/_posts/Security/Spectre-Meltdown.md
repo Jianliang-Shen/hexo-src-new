@@ -6,9 +6,10 @@ index_img: /img/post_pics/os/spectre-meltdown.jpg
 archive: true
 tags:
     - TEE
-    - 缓存
+    - Cache
+    - Security
 categories: 
-    - 安全
+    - Security
 ---
 
 ## 幽灵漏洞

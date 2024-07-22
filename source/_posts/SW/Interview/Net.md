@@ -2,10 +2,10 @@
 title: 计算机网络
 date: 2020-06-23 12:09:29
 tags: 
-    - 计算机网络
+    - Net
     - Linux
 categories: 
-    - 面试
+    - Interview
 ---
 计算机网络学习笔记。
 <!-- more -->

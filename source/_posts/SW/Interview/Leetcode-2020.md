@@ -3,9 +3,9 @@ title: 常见经典算法及题型
 date: 2020-07-08 15:13:11
 tags: 
     - C/C++
-    - 算法
+    - Algorithm
 categories: 
-    - 算法/数据结构
+    - Algorithm
 ---
 
 

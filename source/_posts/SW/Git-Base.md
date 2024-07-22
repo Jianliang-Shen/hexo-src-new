@@ -3,8 +3,9 @@ title: git工具使用指北
 date: 2021-03-31 21:40:59
 tags:
     - Git
+    - Tool
 categories: 
-    - 软件
+    - Software
 ---
 
 Git常用命令

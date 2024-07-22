@@ -5,11 +5,11 @@ tags:
     - Arm
     - FPU
     - TEE
-    - 固件
+    - Firmware
     - TF-M
-    - 中断
+    - Interrupt
 categories: 
-    - 嵌入式
+    - IoT
 ---
 
 测试安全模式和非安全模式下中断的FPU寄存器保护

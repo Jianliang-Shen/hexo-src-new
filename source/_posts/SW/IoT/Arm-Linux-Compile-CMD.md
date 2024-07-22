@@ -5,7 +5,7 @@ tags:
     - Arm
     - Linux
 categories: 
-    - 嵌入式
+    - IoT
 ---
 
 交叉编译内核编译命令

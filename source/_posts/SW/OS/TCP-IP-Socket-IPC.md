@@ -4,9 +4,9 @@ date: 2019-08-09 12:51:01
 index_img: /img/post_pics/tcpip/协议2.png
 tags: 
     - Linux
-    - 网络
+    - Net
 categories: 
-    - 操作系统
+    - OS
 ---
 
 网络传输文件现有的工具为ssh或者tcp指令，ssh中的scp指令如下：

@@ -5,7 +5,7 @@ index_img: /img/post_pics/index_img/rtthread.png
 tags: 
     - RTOS
 categories: 
-    - 操作系统
+    - OS
 ---
 使用的平台：秉火STM32 Cortex-M3内核开发板，RT-Thread v3.1.3。
 <!-- more -->

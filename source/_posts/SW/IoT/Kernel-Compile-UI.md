@@ -4,9 +4,9 @@ date: 2019-07-22 17:48:33
 index_img: /img/post_pics/index_img/gconfig.png
 tags:
     - Linux
-    - 内核
+    - Kernel
 categories: 
-    - 嵌入式
+    - IoT
 ---
 
 除了命令行外，还可以用图形UI来快速配置内核。

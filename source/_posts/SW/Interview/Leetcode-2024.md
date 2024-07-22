@@ -6,9 +6,9 @@ index_img: /img/post_pics/index_img/LeetCode.png
 sticky: 95
 tags: 
     - C/C++
-    - 算法
+    - Algorithm
 categories: 
-    - 面试
+    - Interview
 ---
 
 Leetcode题解汇总。统计到`NO.500`。

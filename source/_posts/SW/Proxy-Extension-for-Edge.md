@@ -4,9 +4,10 @@ title: Proxy Extension for Edge
 index_img: /img/post_pics/proxy/2-1.png
 date: 2024-07-17 16:52:28
 tags:
-    - 网络
+    - Net
+    - Tool
 categories:
-    - 软件
+    - Software
 ---
 
 

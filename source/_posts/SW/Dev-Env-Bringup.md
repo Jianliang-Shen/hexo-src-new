@@ -3,8 +3,9 @@ title: 工作环境和工具使用
 date: 2023-08-10 19:11:42
 tags:
     - Linux
+    - Tool
 categories:
-    - 软件
+    - Software
 ---
 
 软件开发常用配置。

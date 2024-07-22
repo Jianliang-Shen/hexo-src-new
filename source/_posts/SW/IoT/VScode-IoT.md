@@ -5,7 +5,7 @@ tags:
     - Linux
     - VSCode
 categories: 
-    - 嵌入式
+    - IoT
 ---
 
 安装系统和相关软件，使用远程服务。

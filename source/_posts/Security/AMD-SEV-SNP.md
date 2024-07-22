@@ -6,8 +6,10 @@ date: 2024-07-18 13:31:57
 archive: true
 tags: 
     - TEE
+    - Confidential Compute
+    - Security
 categories: 
-    - 安全
+    - Security
 ---
 
 [AMD SEV-SNP：通过完整性保护等增强虚拟机隔离](/pdf/SEV-SNP-strengthening-vm-isolation-with-integrity-protection-and-more.pdf)

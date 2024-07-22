@@ -3,11 +3,11 @@ title: 常见开发问题汇总
 date: 2020-05-04 14:31:21
 tags: 
     - C/C++
-    - 算法
-    - 数据结构
-    - 操作系统
+    - Algorithm
+    - Data Structure
+    - OS
 categories: 
-    - 算法/数据结构
+    - Algorithm
 ---
 
 整理常见必考知识点。

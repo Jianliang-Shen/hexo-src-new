@@ -2,11 +2,13 @@
 title: 密码学介绍和Mbedtls相关实现
 date: 2024-01-20 13:49:37
 tags:
-    - 密码
+    - Cryptography
     - TEE
-    - 算法
+    - Algorithm
+    - Confidential Compute
+    - Security
 categories: 
-    - 安全
+    - Security
 ---
 
 包含密码学和Mbedtls的实现，以及在K210上的移植事例。

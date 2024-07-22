@@ -4,10 +4,10 @@ date: 2019-07-23 13:20:57
 tags: 
     - Linux
     - Kconfig
-    - 内核
-    - 驱动
+    - Kernel
+    - Driver
 categories: 
-    - 操作系统
+    - OS
 ---
 内核的配置过程依赖Makefile和arch/arm/Kconfig以及其他文件下的Kconfig文件，通过make menuconfig或者桌面环境下的xconfig/gconfig可以手动配置内核所支持的功能。
 

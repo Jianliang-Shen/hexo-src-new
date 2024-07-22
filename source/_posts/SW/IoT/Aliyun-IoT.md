@@ -5,7 +5,7 @@ index_img: /img/post_pics/index_img/aliyun_data.jpeg
 tags:
     - Adruino
 categories: 
-    - 嵌入式
+    - IoT
 ---
 
 使用`MCU+wifi`模块通过MQTT协议传输连接到物联网进行数据可视化监控。

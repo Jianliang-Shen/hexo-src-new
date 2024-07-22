@@ -4,10 +4,11 @@ title: 硬件安全 - 从SoC设计到系统级防御
 date: 2024-03-29 22:25:49
 archive: true
 tags:
-    - 硬件
+    - Hardware
     - TEE
+    - Security
 categories: 
-    - 安全
+    - Security
 ---
 
 - 讲了一个新闻事件：2018年的Meltdown（熔断）和Spectre（幽灵）两个处理器新型漏洞被发现利用。

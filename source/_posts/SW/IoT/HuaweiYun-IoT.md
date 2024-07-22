@@ -5,7 +5,7 @@ index_img: /img/post_pics/index_img/hardware.jpg
 tags: 
     - Linux
 categories: 
-    - 嵌入式
+    - IoT
 ---
 记录华为云的上云操作及OBS对象上传文件等操作，大部分操作在WSL Ubuntu中完成，与树莓派环境基本一致。
 

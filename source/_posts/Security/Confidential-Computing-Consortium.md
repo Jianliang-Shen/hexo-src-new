@@ -5,9 +5,10 @@ index_img: /img/post_pics/cc/ccc1.png
 date: 2024-07-18 20:18:02
 archive: true
 tags:
-    - Compute
+    - Confidential Compute
+    - Security
 categories: 
-    - 安全
+    - Security
 ---
 
 Confidential Computing Consortium (CCC).

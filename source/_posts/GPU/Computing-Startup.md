@@ -5,10 +5,11 @@ date: 2024-06-24 23:46:14
 index_img: /img/post_pics/ai/AGI.jpeg
 sticky: 100
 tags:
-    - 算法
+    - Algorithm
     - AI
     - CUDA
     - Pytorch
+    - GPU
 categories: 
     - GPU
 ---

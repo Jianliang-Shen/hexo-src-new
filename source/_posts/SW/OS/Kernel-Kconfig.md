@@ -4,9 +4,9 @@ date: 2019-07-28 20:55:44
 tags:
     - Linux
     - Kconfig
-    - 内核
+    - Kernel
 categories: 
-    - 操作系统
+    - OS
 ---
 
 Linux内核Kconfig文件和语法。

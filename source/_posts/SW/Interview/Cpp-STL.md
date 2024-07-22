@@ -3,10 +3,10 @@ title: C++容器及使用
 date: 2020-06-06 15:06:59
 tags:
     - C/C++
-    - 算法
-    - 数据结构
+    - Algorithm
+    - Data Structure
 categories: 
-    - 面试
+    - Interview
 ---
 使用STL容器刷leetcode事半功倍，包括`vector`、`string`、`deque`、`list`、`stack`、`queue`、`priority_queue`、`set`、`map`等，本文内容根据《算法设计与分析》第一章及刷题经验整理。
 

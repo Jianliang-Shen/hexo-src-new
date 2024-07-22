@@ -5,7 +5,7 @@ index_img: /img/post_pics/cuda-c/book.jpeg
 date: 2024-04-04 13:02:37
 sticky: 90
 tags: 
-    - 并行计算
+    - Compute
     - GPU
     - CUDA
 categories: 

@@ -5,7 +5,7 @@ tags:
     - Hexo
     - Linux
 categories: 
-    - 软件
+    - Software
 ---
 
 文章转载来自[使用 Hexo + Github 搭建自己的博客（图文教程）](https://blog.csdn.net/qq_40147863/article/details/84942914)  

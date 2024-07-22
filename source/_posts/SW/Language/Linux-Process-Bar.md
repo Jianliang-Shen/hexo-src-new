@@ -4,7 +4,7 @@ date: 2020-04-25 13:51:18
 tags: 
     - C/C++
 categories: 
-    - 编程语言
+    - Language
 ---
 简单介绍一些C语言的常用技巧。
 <!-- more -->

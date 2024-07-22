@@ -6,11 +6,11 @@ index_img: /img/post_pics/c/index_img.jpg
 sticky: 95
 tags: 
     - C/C++
-    - 嵌入式
-    - 操作系统
-    - 算法
+    - IoT
+    - OS
+    - Algorithm
 categories: 
-    - 面试
+    - Interview
 ---
 
 包含C/C++，操作系统，linux内核/驱动，嵌入式等一系列开发经验和知识总结。

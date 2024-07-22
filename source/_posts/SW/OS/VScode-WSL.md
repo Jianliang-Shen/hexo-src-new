@@ -4,7 +4,7 @@ date: 2019-08-10 14:40:08
 tags: 
     - Linux
 categories: 
-    - 操作系统
+    - OS
 ---
 
 Windows想用到Linux系统只能WSL了。

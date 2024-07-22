@@ -4,9 +4,9 @@ date: 2019-11-08 13:30:34
 index_img: /img/post_pics/index_img/am5728_ram.png
 tags: 
     - Linux
-    - 内存
+    - Memory
 categories: 
-    - 嵌入式
+    - IoT
 ---
 在测试AM5728时发现，ARM读完SD card中的MLO文件后没有后续操作.
 

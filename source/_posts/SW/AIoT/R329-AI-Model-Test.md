@@ -3,10 +3,10 @@ title: R329模型仿真测试
 date: 2021-07-15 22:07:29
 tags:
     - Linux
-    - 算法
+    - Algorithm
     - AI
 categories: 
-    - 边缘计算
+    - AIoT
 ---
 
 ## Docker安装及使用

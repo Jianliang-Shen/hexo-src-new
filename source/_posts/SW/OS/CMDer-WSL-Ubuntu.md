@@ -5,7 +5,7 @@ index_img: /img/post_pics/index_img/cmder_wsl_ubuntu.JPG
 tags:
     - Linux
 categories: 
-    - 操作系统
+    - OS
 ---
 WSL Ubuntu的界面比较简陋，推荐使用cmder改良一下终端。  
 ![](/img/post_pics/index_img/cmder_wsl_ubuntu.JPG)

@@ -6,8 +6,10 @@ date: 2024-07-11 13:38:25
 archive: true
 tags: 
     - TEE
+    - Confidential Compute
+    - Security
 categories: 
-    - 安全
+    - Security
 ---
 
 国家机密计算标准概要。

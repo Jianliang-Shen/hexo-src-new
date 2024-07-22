@@ -3,10 +3,10 @@ title: R329 Debian系统安装体验
 date: 2021-08-02 21:56:29
 tags: 
     - Linux
-    - 算法
+    - Algorithm
     - OpenCV
 categories: 
-    - 边缘计算
+    - AIoT
 ---
 
 ## R329 MaixSense
