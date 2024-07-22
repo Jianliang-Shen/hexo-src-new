@@ -62,13 +62,13 @@ category_map:
 tag_map:
 
 live2d:
-  enable: true
+  enable: false
   scriptFrom: local
   pluginRootPath: live2dw/
   pluginJsPath: lib/
   pluginModelPath: assets/
   model:
-    use: live2d-widget-model-epsilon2_1
+    use: live2d-models/models/bilibili-22
   display:
     # 设置模型的位置
     position: right
@@ -79,6 +79,47 @@ live2d:
   react:
     opacityDefault: 1
     opacityOnHover: 1
+
+# hexo-oh-my-live2d 配置
+OhMyLive2d:
+  enable: true
+  CDN: https://unpkg.com/oh-my-live2d
+  option:
+    dockedPosition: 'right' # 模型停靠位置 默认值: 'right' 可选值: 'left' | 'right'
+    mobileDisplay: false # 是否在移动端显示
+    models:
+      - path: /live2d-models/models/bilibili-22/index.json
+        position: [0, 0] # 模型在舞台中的位置。 默认值: [0,0] [横坐标, 纵坐标]
+        scale: 0.2 # 模型的缩放比例 默认值: 0.1
+        stageStyle:
+          width: 250
+          # height: 360
+      - path: /live2d-models/models/bilibili-33/index.json
+        position: [0, 0]
+        scale: 0.2
+        stageStyle:
+          width: 250
+          # height: 360
+      - path: /live2d-models/models/cat-black/model.json
+        position: [0, 0]
+        scale: 0.1
+        stageStyle:
+          width: 200
+      - path: /live2d-models/models/cat-white/model.json
+        position: [0, 0]
+        scale: 0.1
+        stageStyle:
+          width: 200
+    parentElement: document.body #为组件提供一个父元素，如果未指定则默认挂载到 body 中
+    primaryColor: '#38B0DE' # 主题色 支持变量
+    tips:
+      style:
+      #   # width: 270
+      #   # height: 100
+        left: calc(50%)
+        top: -80px
+      idleTips:
+        interval: 150
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
