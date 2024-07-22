@@ -88,28 +88,68 @@ OhMyLive2d:
     dockedPosition: 'right' # 模型停靠位置 默认值: 'right' 可选值: 'left' | 'right'
     mobileDisplay: false # 是否在移动端显示
     models:
+      - path: /live2d-models/models/umaru/model.json
+        position: [100, 30]
+        scale: 0.25
+        stageStyle:
+          width: 400
+          height: 470
+      - path: /live2d-models/models/kobayaxi/model.json
+        position: [30, 0]
+        scale: 0.3
+        stageStyle:
+          width: 400
       - path: /live2d-models/models/bilibili-22/index.json
-        position: [0, 0] # 模型在舞台中的位置。 默认值: [0,0] [横坐标, 纵坐标]
-        scale: 0.2 # 模型的缩放比例 默认值: 0.1
+        position: [0, 30]
+        scale: 0.35
         stageStyle:
-          width: 250
-          # height: 360
+          width: 400
       - path: /live2d-models/models/bilibili-33/index.json
-        position: [0, 0]
-        scale: 0.2
+        position: [0, 30]
+        scale: 0.35
         stageStyle:
-          width: 250
-          # height: 360
-      - path: /live2d-models/models/cat-black/model.json
-        position: [0, 0]
-        scale: 0.1
-        stageStyle:
-          width: 200
-      - path: /live2d-models/models/cat-white/model.json
-        position: [0, 0]
-        scale: 0.1
-        stageStyle:
-          width: 200
+          width: 400
+      # - path: /live2d-models/models/HK416-1-normal/model.json
+      #   position: [0, 0]
+      #   scale: 0.08
+      #   stageStyle:
+      #     width: 350
+      # - path: /live2d-models/models/rem/model.json
+      #   position: [0, 0]
+      #   scale: 0.15
+      #   stageStyle:
+      #     width: 350
+      # - path: /live2d-models/models/chino/model.json
+      #   position: [0, 0]
+      #   scale: 0.2
+      #   stageStyle:
+      #     width: 200
+      # - path: /live2d-models/models/mai/model.json
+      #   position: [0, 0]
+      #   scale: 0.25
+      #   stageStyle:
+      #     width: 250
+      # - path: /live2d-models/models/HK416-2-destroy/model.json
+      #   position: [0, 0]
+      #   scale: 0.08
+      #   stageStyle:
+      #     width: 250
+      # - path: /live2d-models/models/platelet/model.json
+      #   position: [0, 0]
+      #   scale: 0.2
+      #   stageStyle:
+      #     width: 250
+      # - path: /live2d-models/models/platelet_2/model.json
+      #   position: [0, 0]
+      #   scale: 0.15
+      #   stageStyle:
+      #     width: 300
+      # - path: /live2d-models/models/HK416-2-normal/model.json
+      #   position: [0, 0]
+      #   scale: 0.08
+      #   stageStyle:
+      #     width: 250
+
     parentElement: document.body #为组件提供一个父元素，如果未指定则默认挂载到 body 中
     primaryColor: '#38B0DE' # 主题色 支持变量
     tips:
@@ -117,7 +157,7 @@ OhMyLive2d:
       #   # width: 270
       #   # height: 100
         left: calc(50%)
-        top: -80px
+        top: -50px
       idleTips:
         interval: 150
 
