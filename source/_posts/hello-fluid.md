@@ -2,9 +2,8 @@
 title: Hello Fluid
 date: 2020-04-22 22:22:22
 index_img: https://fluid.s3.bitiful.net/hello-fluid/cover.png?w=480&fmt=webp
-category: 主题示例
+category: Software
 tags:
-  - 示例
   - Fluid
 math: true
 mermaid: true
