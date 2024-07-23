@@ -3,7 +3,7 @@ layout: post
 title: 嵌入式软件C/C++/OS/驱动程序开发笔记
 date: 2024-01-19 20:33:04
 index_img: /img/post_pics/c/index_img.jpg
-sticky: 95
+# sticky: 95
 tags: 
     - C/C++
     - IoT

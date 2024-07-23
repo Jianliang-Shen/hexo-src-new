@@ -3,7 +3,7 @@ layout: post
 title: CUDA C 编程
 index_img: /img/post_pics/cuda-c/book.jpeg
 date: 2024-04-04 13:02:37
-sticky: 90
+# sticky: 90
 tags: 
     - Compute
     - GPU
