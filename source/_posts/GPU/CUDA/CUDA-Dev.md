@@ -11,52 +11,11 @@ categories:
     - GPU
 ---
 
-## 目录
+Based on [Jetson Orin Nano](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/).
 
-- [目录](#目录)
-- [System info](#system-info)
-- [Helloworld](#helloworld)
-- [带上这些问题](#带上这些问题)
-- [1. 超级计算](#1-超级计算)
-  - [cuda的其他选择](#cuda的其他选择)
-- [2. 使用GPU理解并行计算](#2-使用gpu理解并行计算)
-  - [串行/并行](#串行并行)
-  - [并发](#并发)
-  - [局部性](#局部性)
-  - [并行处理的类型](#并行处理的类型)
-    - [基于任务](#基于任务)
-    - [基于数据](#基于数据)
-  - [弗林分类法](#弗林分类法)
-  - [常用的并行模式](#常用的并行模式)
-    - [基于循环](#基于循环)
-    - [派生/汇集](#派生汇集)
-    - [分条/分块](#分条分块)
-    - [分而治之](#分而治之)
-- [3. CUDA硬件概述](#3-cuda硬件概述)
-- [5. 线程网络、线程块和线程](#5-线程网络线程块和线程)
-  - [线程](#线程)
-    - [问题分解](#问题分解)
-    - [GPU和CPU区别](#gpu和cpu区别)
-    - [任务执行模式](#任务执行模式)
-    - [GPU线程](#gpu线程)
-      - [内存空间](#内存空间)
-      - [线程ID](#线程id)
-    - [硬件实现](#硬件实现)
-    - [CUDA内核](#cuda内核)
-  - [线程块](#线程块)
-    - [线程块的分配](#线程块的分配)
-  - [线程网格](#线程网格)
-    - [跨幅和偏移](#跨幅和偏移)
-    - [X与Y方向的线程索引](#x与y方向的线程索引)
-  - [线程束](#线程束)
-    - [分支](#分支)
-    - [GPU的利用率](#gpu的利用率)
-  - [线程块的调度](#线程块的调度)
-  - [Ex.直方图](#ex直方图)
+<!-- more -->
 
 ## System info
-
-Based on [Jetson Orin Nano](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/).
 
 - GPU: 1024-core NVIDIA Ampere architecture GPU with 32 Tensor Cores
 - AI Performance: 40 TOPS

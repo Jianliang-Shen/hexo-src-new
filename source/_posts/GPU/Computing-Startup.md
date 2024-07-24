@@ -22,20 +22,20 @@ GPU, Compute and AI.
 
 - [目录](#目录)
 - [资料汇总](#资料汇总)
-- [PyTorch 知识点整理](#pytorch-知识点整理)
-- [安装 Pytorch 1.6 环境（CPU版本）](#安装-pytorch-16-环境cpu版本)
-- [安装 Pytorch 2.x 环境（CUDA版本）](#安装-pytorch-2x-环境cuda版本)
-- [Pytorch Book VScode 环境配置](#pytorch-book-vscode-环境配置)
-- [Examples](#examples)
+- [pytorch 知识点整理](#pytorch-知识点整理)
+- [安装 pytorch cpu 版本](#安装-pytorch-cpu-版本)
+- [安装 pytorch cuda 版本](#安装-pytorch-cuda-版本)
+- [pytorch book vscode 环境配置](#pytorch-book-vscode-环境配置)
+- [示例](#示例)
   - [线性回归](#线性回归)
-  - [FashionMNIST 手写数字分类](#fashionmnist-手写数字分类)
-  - [Cifar-10](#cifar-10)
+  - [fashion mnist 手写数字分类](#fashion-mnist-手写数字分类)
+  - [cifar 10](#cifar-10)
 
 ## 资料汇总
 
 | 链接  | 说明 |
 | ---- | --- |
-| [**《深度学习框架PyTorch：入门与实战》代码**](https://github.com/chenyuntc/pytorch-book)| 这个适合开始阶段，参考[PyTorch 知识点整理](#pytorch-知识点整理)。此书配套1.6版本的pytorch，参考[安装 Pytorch 1.6 环境（CPU版本）](#安装-pytorch-16-环境cpu版本)和[Pytorch Book VScode 环境配置](#pytorch-book-vscode-环境配置) |
+| [**《深度学习框架PyTorch：入门与实战》代码**](https://github.com/chenyuntc/pytorch-book)| 这个适合开始阶段，参考[pytorch 知识点整理](#pytorch-知识点整理)。此书配套1.6版本的pytorch，参考[安装 pytorch cpu 版本](#安装-pytorch-cpu-版本)和[pytorch book vscode 环境配置](#pytorch-book-vscode-环境配置) |
 | [Pytorch 官方文档](https://pytorch.org/tutorials/beginner/basics/intro.html)  | 最新的是2.3版本，和下面教程搭配着看 |
 | [Pytorch 官方文档教程仓库](https://github.com/pytorch/tutorials) | PyTorch tutorials。有点占地方，里面和文档内容对应，有直接可运行的脚本  |
 | [Pytorch 安装指引](https://pytorch.org/get-started/locally/)| 安装CPU/CUDA版本 |
@@ -103,7 +103,7 @@ GPU, Compute and AI.
 
 {% endfold %}
 
-## PyTorch 知识点整理
+## pytorch 知识点整理
 
 《深度学习框架 PyTorch: 入门与实战》
 
@@ -152,7 +152,7 @@ PyTorch内部实现了神经网络中绝大多数的layer，这些layer都继承
 
 {% endfold %}
 
-## 安装 Pytorch 1.6 环境（CPU版本）
+## 安装 pytorch cpu 版本
 
 <https://pytorch.org/get-started/previous-versions/>
 
@@ -396,7 +396,7 @@ pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.
 
 {% endfold %}
 
-## 安装 Pytorch 2.x 环境（CUDA版本）
+## 安装 pytorch cuda 版本
 
 在RTX4070S windows中配置WSL相关的AI环境，包括CUDA，PyTorch，Cudnn等
 
@@ -486,7 +486,7 @@ cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 
 {% endfold %}
 
-## Pytorch Book VScode 环境配置
+## pytorch book vscode 环境配置
 
 {% fold @步骤 %}
 
@@ -514,13 +514,13 @@ VScode安装插件
 
 {% endfold %}
 
-## Examples
+## 示例
 
 ### 线性回归
 
 梯度下降算法和auto grad自动求解梯度函数，参考 [**《深度学习框架PyTorch：入门与实战》代码**](https://github.com/chenyuntc/pytorch-book) 小试牛刀: 用autograd实现线性回归。
 
-### FashionMNIST 手写数字分类
+### fashion mnist 手写数字分类
 
 参考Pytorch教程: [Quick Start](https://pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html)
 
@@ -614,6 +614,6 @@ with torch.no_grad():
 
 {% endfold %}
 
-### Cifar-10
+### cifar 10
 
 参考 [**《深度学习框架PyTorch：入门与实战》代码**](https://github.com/chenyuntc/pytorch-book) 2.2.4 小试牛刀：CIFAR-10分类。

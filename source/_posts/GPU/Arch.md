@@ -33,39 +33,6 @@ NV GPU架构介绍和演化过程。
 [Hopper](/pdf/NVIDIA-H100-GPU-Architecture-Whitepaper-zhCN.pdf)
 [Blackwell](/pdf/NVIDIA-Blackwell-Architecture-Technical-Overview.pdf)
 
-## 目录
-
-- [目录](#目录)
-- [GPU架构](#gpu架构)
-  - [GPU渲染](#gpu渲染)
-  - [内存架构](#内存架构)
-  - [Streaming Multiprocessor(SM)](#streaming-multiprocessorsm)
-  - [CUDA Core](#cuda-core)
-    - [并行计算](#并行计算)
-    - [应用范围](#应用范围)
-  - [Tensor Core](#tensor-core)
-  - [RT Core](#rt-core)
-  - [CPU-GPU异构系统](#cpu-gpu异构系统)
-  - [GPU资源管理模型](#gpu资源管理模型)
-    - [MMIO（Memory Mapped IO）](#mmiomemory-mapped-io)
-    - [GPU Context](#gpu-context)
-    - [GPU Channel](#gpu-channel)
-    - [GPU Page Table](#gpu-page-table)
-    - [PCI-e BAR](#pci-e-bar)
-    - [PFIFO Engine](#pfifo-engine)
-    - [BO](#bo)
-- [GPU架构演进](#gpu架构演进)
-  - [G80 架构](#g80-架构)
-  - [Fermi 架构](#fermi-架构)
-  - [Maxwell架构](#maxwell架构)
-  - [Tesla架构](#tesla架构)
-  - [Pascal架构](#pascal架构)
-  - [Volta 架构](#volta-架构)
-  - [Turing架构](#turing架构)
-  - [Ampere 架构](#ampere-架构)
-  - [Hopper架构](#hopper架构)
-  - [Blackwell 架构](#blackwell-架构)
-
 ## GPU架构
 主要组成包括：
 

@@ -64,7 +64,8 @@ code:
       # Select a style in the link
       # See: https://highlightjs.org/static/demo/
       # style: "monokai"
-      style: "an old hope"
+      # style: "an old hope"
+      style: "dark"
       style_dark: "dark"
 
     prismjs:
@@ -88,7 +89,7 @@ fun_features:
 
     # 打印速度，数字越大越慢
     # Typing speed, the larger the number, the slower
-    typeSpeed: 50
+    typeSpeed: 15
 
     # 游标字符
     # Cursor character
@@ -314,10 +315,10 @@ color:
 # 主题字体配置
 # Font
 font:
-  font_size: 14px
+  font_size: 16px
   font_family:
   letter_spacing: 0.02em
-  code_font_size: 100%
+  code_font_size: 85%
 
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
@@ -566,7 +567,8 @@ index:
 
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
-    text: "博学之 审问之 慎思之 明辨之 笃行之 --《中庸·礼记》"
+    # text: "博学之 审问之 慎思之 明辨之 笃行之 --《中庸·礼记》"
+    text: "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.  -- Jobs"
 
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
