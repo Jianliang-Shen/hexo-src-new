@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Llama 本地化部署
-index_img: /img/post_pics/ai/index_llama.png
+index_img: /img/post_pics/ai/llama1-logo.png
 date: 2024-07-23 16:10:26
+sticky: 110
 tags:
     - AI
     - GPU
@@ -12,41 +13,32 @@ categories:
     - GPU
 ---
 
-Chinese-LLaMA-Alpaca-2是基于Meta发布的可商用大模型Llama-2开发，是中文LLaMA&Alpaca大模型的第二期项目，开源了中文LLaMA-2基座模型和Alpaca-2指令精调大模型。
+Chinese-LLaMA-Alpaca 是基于 Meta 发布的可商用大模型 Llama 开发，llama.cpp 是一个 C++ 语言部署 Llama 的框架。
 
 <!-- more -->
 
-这些模型在原版Llama-2的基础上扩充并优化了中文词表，使用了大规模中文数据进行增量预训练，进一步提升了中文基础语义和指令理解能力，相比一代相关模型获得了显著性能提升。相关模型支持FlashAttention-2训练。标准版模型支持4K上下文长度，长上下文版模型支持16K、64k上下文长度。RLHF系列模型为标准版模型基础上进行人类偏好对齐精调，相比标准版模型在正确价值观体现方面获得了显著性能提升。
-
-[Chinese-LLaMA-Alpaca-2](https://github.com/ymcui/Chinese-LLaMA-Alpaca-2)
-[Chinese-LLaMA-Alpaca](https://github.com/ymcui/Chinese-LLaMA-Alpaca)
-[LLM inference in C/C++](https://github.com/ggerganov/llama.cpp)
-
-# 目录
-
-- [目录](#目录)
-- [llama 2](#llama-2)
-  - [配置过程](#配置过程)
-  - [模型选择指引](#模型选择指引)
-  - [完整模型下载](#完整模型下载)
-  - [参考](#参考)
+- [llama.cpp](https://github.com/ggerganov/llama.cpp)
 
 # llama 2
 
-## 配置过程
+- [Chinese-LLaMA-Alpaca-2](https://github.com/ymcui/Chinese-LLaMA-Alpaca-2)
 
-[chinese-alpaca-2-1.3b-gguf](https://huggingface.co/hfl/chinese-alpaca-2-1.3b-gguf/tree/main)
-[llama.cpp部署教程](https://github.com/ymcui/Chinese-LLaMA-Alpaca-2/wiki/llamacpp_zh)
+## 部署
+
+- [长上下文版模型 Chinese-Alpaca-2-7B-64K](https://huggingface.co/hfl/chinese-alpaca-2-7b-64k-gguf/tree/main)
+- [llama.cpp部署教程](https://github.com/ymcui/Chinese-LLaMA-Alpaca-2/wiki/llamacpp_zh)
+
+注：FP16版本较慢，可以下`q8_0`或`Q6_K`，非常接近F16模型的效果。
 
 ```bash
 git clone https://github.com/ggerganov/llama.cpp
 cd llama.cpp
 
 make GGML_CUDA=1
-./chat.sh model/ggml-model-f16.gguf '背一下静夜思'
+./chat.sh model/chinese-alpaca-2-7b-64k-ggml-model-f16.gguf '介绍一下北京'
 ```
 
-`chat.sh` 内容：
+- `chat.sh` 内容：
 
 ```bash
 #!/bin/bash
@@ -60,7 +52,7 @@ FIRST_INSTRUCTION=$2
 # 注，新版 llama.cpp 拆分了编译的 main 可执行文件
 ./llama-cli -m $1 \
 --color -i -c 4096 -t 8 --temp 0.5 --top_k 40 --top_p 0.9 --repeat_penalty 1.1 \
---in-prefix-bos --in-prefix ' [INST] ' --in-suffix ' [/INST]' -p \
+--in-prefix-bos -ngl 40 --in-prefix ' [INST] ' --in-suffix ' [/INST]' -p \
 "[INST] <<SYS>>
 $SYSTEM
 <</SYS>>
@@ -68,146 +60,166 @@ $SYSTEM
 $FIRST_INSTRUCTION [/INST]"
 ```
 
-![LLAMA](/img/post_pics/ai/llama.png)
+{% note primary %}
+GPU版本需要用`-ngl 40`参数指定（必须编译CUDA版本）。
+{% endnote %}
 
-{% fold @执行log %}
+![LLAMA](/img/post_pics/ai/llama_gpu.png)
 
-```txt
-./chat.sh model/ggml-model-f16.gguf '背一下静夜思'
-Log start
-main: build = 3446 (938943cd)
-main: built with cc (Ubuntu 9.4.0-1ubuntu1~20.04.3) 9.4.0 for x86_64-linux-gnu
-main: seed  = 1721743303
-llama_model_loader: loaded meta data with 21 key-value pairs and 39 tensors from model/ggml-model-f16.gguf (version GGUF V3 (latest))
-llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
-llama_model_loader: - kv   0:                       general.architecture str              = llama
-llama_model_loader: - kv   1:                               general.name str              = LLaMA v2
-llama_model_loader: - kv   2:                       llama.context_length u32              = 4096
-llama_model_loader: - kv   3:                     llama.embedding_length u32              = 4096
-llama_model_loader: - kv   4:                          llama.block_count u32              = 4
-llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 11008
-llama_model_loader: - kv   6:                 llama.rope.dimension_count u32              = 128
-llama_model_loader: - kv   7:                 llama.attention.head_count u32              = 32
-llama_model_loader: - kv   8:              llama.attention.head_count_kv u32              = 32
-llama_model_loader: - kv   9:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
-llama_model_loader: - kv  10:                       llama.rope.freq_base f32              = 10000.000000
-llama_model_loader: - kv  11:                          general.file_type u32              = 1
-llama_model_loader: - kv  12:                       tokenizer.ggml.model str              = llama
-llama_model_loader: - kv  13:                      tokenizer.ggml.tokens arr[str,55296]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
-llama_model_loader: - kv  14:                      tokenizer.ggml.scores arr[f32,55296]   = [0.000000, 0.000000, 0.000000, 0.0000...
-llama_model_loader: - kv  15:                  tokenizer.ggml.token_type arr[i32,55296]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
-llama_model_loader: - kv  16:                tokenizer.ggml.bos_token_id u32              = 1
-llama_model_loader: - kv  17:                tokenizer.ggml.eos_token_id u32              = 2
-llama_model_loader: - kv  18:            tokenizer.ggml.padding_token_id u32              = 0
-llama_model_loader: - kv  19:               tokenizer.ggml.add_bos_token bool             = true
-llama_model_loader: - kv  20:               tokenizer.ggml.add_eos_token bool             = false
-llama_model_loader: - type  f32:    9 tensors
-llama_model_loader: - type  f16:   30 tensors
-llm_load_vocab: special tokens cache size = 3
-llm_load_vocab: token to piece cache size = 0.2971 MB
-llm_load_print_meta: format           = GGUF V3 (latest)
-llm_load_print_meta: arch             = llama
-llm_load_print_meta: vocab type       = SPM
-llm_load_print_meta: n_vocab          = 55296
-llm_load_print_meta: n_merges         = 0
-llm_load_print_meta: vocab_only       = 0
-llm_load_print_meta: n_ctx_train      = 4096
-llm_load_print_meta: n_embd           = 4096
-llm_load_print_meta: n_layer          = 4
-llm_load_print_meta: n_head           = 32
-llm_load_print_meta: n_head_kv        = 32
-llm_load_print_meta: n_rot            = 128
-llm_load_print_meta: n_swa            = 0
-llm_load_print_meta: n_embd_head_k    = 128
-llm_load_print_meta: n_embd_head_v    = 128
-llm_load_print_meta: n_gqa            = 1
-llm_load_print_meta: n_embd_k_gqa     = 4096
-llm_load_print_meta: n_embd_v_gqa     = 4096
-llm_load_print_meta: f_norm_eps       = 0.0e+00
-llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
-llm_load_print_meta: f_clamp_kqv      = 0.0e+00
-llm_load_print_meta: f_max_alibi_bias = 0.0e+00
-llm_load_print_meta: f_logit_scale    = 0.0e+00
-llm_load_print_meta: n_ff             = 11008
-llm_load_print_meta: n_expert         = 0
-llm_load_print_meta: n_expert_used    = 0
-llm_load_print_meta: causal attn      = 1
-llm_load_print_meta: pooling type     = 0
-llm_load_print_meta: rope type        = 0
-llm_load_print_meta: rope scaling     = linear
-llm_load_print_meta: freq_base_train  = 10000.0
-llm_load_print_meta: freq_scale_train = 1
-llm_load_print_meta: n_ctx_orig_yarn  = 4096
-llm_load_print_meta: rope_finetuned   = unknown
-llm_load_print_meta: ssm_d_conv       = 0
-llm_load_print_meta: ssm_d_inner      = 0
-llm_load_print_meta: ssm_d_state      = 0
-llm_load_print_meta: ssm_dt_rank      = 0
-llm_load_print_meta: model type       = ?B
-llm_load_print_meta: model ftype      = F16
-llm_load_print_meta: model params     = 1.26 B
-llm_load_print_meta: model size       = 2.35 GiB (16.00 BPW)
-llm_load_print_meta: general.name     = LLaMA v2
-llm_load_print_meta: BOS token        = 1 '<s>'
-llm_load_print_meta: EOS token        = 2 '</s>'
-llm_load_print_meta: UNK token        = 0 '<unk>'
-llm_load_print_meta: PAD token        = 0 '<unk>'
-llm_load_print_meta: LF token         = 13 '<0x0A>'
-llm_load_print_meta: max token length = 48
-ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
-ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
-ggml_cuda_init: found 1 CUDA devices:
-  Device 0: NVIDIA GeForce RTX 4070 SUPER, compute capability 8.9, VMM: yes
-llm_load_tensors: ggml ctx size =    0.02 MiB
-llm_load_tensors: offloading 0 repeating layers to GPU
-llm_load_tensors: offloaded 0/5 layers to GPU
-llm_load_tensors:        CPU buffer size =  2408.14 MiB
-..............................
-llama_new_context_with_model: n_ctx      = 4096
-llama_new_context_with_model: n_batch    = 2048
-llama_new_context_with_model: n_ubatch   = 512
-llama_new_context_with_model: flash_attn = 0
-llama_new_context_with_model: freq_base  = 10000.0
-llama_new_context_with_model: freq_scale = 1
-llama_kv_cache_init:  CUDA_Host KV buffer size =   256.00 MiB
-llama_new_context_with_model: KV self size  =  256.00 MiB, K (f16):  128.00 MiB, V (f16):  128.00 MiB
-llama_new_context_with_model:  CUDA_Host  output buffer size =     0.21 MiB
-llama_new_context_with_model:      CUDA0 compute buffer size =   642.00 MiB
-llama_new_context_with_model:  CUDA_Host compute buffer size =    24.01 MiB
-llama_new_context_with_model: graph nodes  = 134
-llama_new_context_with_model: graph splits = 48
+## server 设置
 
-system_info: n_threads = 8 / 20 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 0 | AVX512_VBMI = 0 | AVX512_VNNI = 0 | AVX512_BF16 = 0 | FMA = 1 | NEON = 0 | SVE = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | MATMUL_INT8 = 0 | LLAMAFILE = 1 |
-main: interactive mode on.
-Input prefix with BOS
-Input prefix: ' [INST] '
-Input suffix: ' [/INST]'
-sampling:
-        repeat_last_n = 64, repeat_penalty = 1.100, frequency_penalty = 0.000, presence_penalty = 0.000
-        top_k = 40, tfs_z = 1.000, top_p = 0.900, min_p = 0.050, typical_p = 1.000, temp = 0.500
-        mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
-sampling order:
-CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temperature
-generate: n_ctx = 4096, n_batch = 2048, n_predict = -1, n_keep = 1
+```bash
+./llama-server -m model/chinese-alpaca-2-7b-64k-ggml-model-q8_0.gguf -c 4096 -ngl 40
+```
 
+创建一个client脚本：
 
-== Running in interactive mode. ==
- - Press Ctrl+C to interject at any time.
- - Press Return to return control to the AI.
- - To return control without starting a new line, end your input with '/'.
- - If you want to submit another line, end your input with '\'.
+```bash
+# server_curl_example.sh
 
- [INST] <<SYS>>
-You are a helpful assistant. 你是一个乐于助人的助手。
-<</SYS>>
+SYSTEM_PROMPT='You are a helpful assistant. 你是一个乐于助人的助手。'
+# SYSTEM_PROMPT='You are a helpful assistant. 你是一个乐于助人的助手。请你提供专业、有逻辑、内 容真实、有价值的详细回复。' # Try this one, if you prefer longer response.
+INSTRUCTION=$1
+ALL_PROMPT="[INST] <<SYS>>\n$SYSTEM_PROMPT\n<</SYS>>\n\n$INSTRUCTION [/INST]"
+CURL_DATA="{\"prompt\": \"$ALL_PROMPT\",\"n_predict\": 128}"
 
-背一下静夜思 [/INST] 床前明月光，疑是地上霜。举头望明月，低头思故乡。
- [INST]
+curl --request POST \
+    --url http://localhost:8080/completion \
+    --header "Content-Type: application/json" \
+    --data "$CURL_DATA"
+
+echo
+```
+
+```bash
+./server_curl_example.sh '请列举5条文明乘车的建议'
+```
+
+![LLAMA Server](/img/post_pics/ai/llama_server.png)
+
+{% fold @运行后返回一个json条目 %}
+
+```json
+{
+    "content": " 1. 保持秩序：尽量保持车内安静，尊重他人的权益。不要大声喧哗、大声打电话或使用电子设备，以 免干扰他人的休息和学习。\n\n2. 不吸烟：在乘车过程中，不吸烟或使用电子烟，以保持车内空气质量，并尊重他人的健康。\n\n3. 注意个人卫生：尽量避免在车内进食、嚼口香糖、吐痰等，保持车内的卫生和清洁。同时，保持个人卫生，如洗手、洗脸等，以减少细菌和病毒传播的风险。\n\n4. 遵守乘车规则：遵守乘车",
+    "id_slot": 0,
+    "stop": true,
+    "model": "model/chinese-alpaca-2-7b-64k-ggml-model-q8_0.gguf",
+    "tokens_predicted": 128,
+    "tokens_evaluated": 43,
+    "generation_settings": {
+        "n_ctx": 4096,
+        "n_predict": -1,
+        "model": "model/chinese-alpaca-2-7b-64k-ggml-model-q8_0.gguf",
+        "seed": 4294967295,
+        "temperature": 0.800000011920929,
+        "dynatemp_range": 0.0,
+        "dynatemp_exponent": 1.0,
+        "top_k": 40,
+        "top_p": 0.949999988079071,
+        "min_p": 0.05000000074505806,
+        "tfs_z": 1.0,
+        "typical_p": 1.0,
+        "repeat_last_n": 64,
+        "repeat_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "penalty_prompt_tokens": [],
+        "use_penalty_prompt_tokens": false,
+        "mirostat": 0,
+        "mirostat_tau": 5.0,
+        "mirostat_eta": 0.10000000149011612,
+        "penalize_nl": false,
+        "stop": [],
+        "n_keep": 0,
+        "n_discard": 0,
+        "ignore_eos": false,
+        "stream": false,
+        "logit_bias": [],
+        "n_probs": 0,
+        "min_keep": 0,
+        "grammar": "",
+        "samplers": [
+            "top_k",
+            "tfs_z",
+            "typical_p",
+            "top_p",
+            "min_p",
+            "temperature"
+        ]
+    },
+    "prompt": "[INST] <<SYS>>\nYou are a helpful assistant. 你是一个乐于助人的助手。\n<</SYS>>\n\n请列举5条文明乘车的建议 [/INST]",
+    "truncated": false,
+    "stopped_eos": false,
+    "stopped_word": false,
+    "stopped_limit": true,
+    "stopping_word": "",
+    "tokens_cached": 170,
+    "timings": {
+        "prompt_n": 43,
+        "prompt_ms": 244.353,
+        "prompt_per_token_ms": 5.6826279069767445,
+        "prompt_per_second": 175.97492152746233,
+        "predicted_n": 128,
+        "predicted_ms": 2295.145,
+        "predicted_per_token_ms": 17.9308203125,
+        "predicted_per_second": 55.7698968910461
+    }
+}
 ```
 
 {% endfold %}
 
-## 模型选择指引
+## ollama 部署
+
+- [ollama部署体验Chinese-LLaMA-Alpaca-3大模型项目](https://blog.csdn.net/nlpstarter/article/details/138910697)
+- [ollama下载地址](https://ollama.com/download)
+- [ollama仓库](https://github.com/ollama/ollama?tab=readme-ov-file)
+
+首次运行`ollama run llama3`，会联网加载模型：
+
+```bash
+$ ollama run llama3
+pulling manifest
+pulling 6a0746a1ec1a... 100% ▕███████████████████████████████████████▏  4.7 GB
+pulling 4fa551d4f938... 100% ▕███████████████████████████████████████▏  12 KB
+pulling 8ab4849b038c... 100% ▕███████████████████████████████████████▏  254 B
+pulling 577073ffcc6c... 100% ▕███████████████████████████████████████▏  110 B
+pulling 3f8eb4da87fa... 100% ▕███████████████████████████████████████▏  485 B
+verifying sha256 digest
+writing manifest
+removing any unused layers
+success
+```
+
+![Ollama](/img/post_pics/ai/ollama.png)
+
+实测是自动运行了GPU加速的。
+
+体验本地中文LLama2大模型，参考[使用Ollama进行聊天](https://github.com/ymcui/Chinese-LLaMA-Alpaca-3/wiki/ollama_zh)，Modelfile如下：
+
+```bash
+FROM D:\work\LLAMA-Chinese-Model\chinese-alpaca-2-7b-64k-ggml-model-q8_0.gguf
+TEMPLATE """{{ if .System }}<|start_header_id|>system<|end_header_id|>
+
+{{ .System }}<|eot_id|>{{ end }}{{ if .Prompt }}<|start_header_id|>user<|end_header_id|>
+
+{{ .Prompt }}<|eot_id|>{{ end }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ .Response }}<|eot_id|>"""
+SYSTEM """You are a helpful assistant. 你是一个乐于助人的助手。请你提供专业、有逻辑、内 容真实、有价值的详细回复。"""
+PARAMETER temperature 0.2
+PARAMETER num_keep 24
+PARAMETER stop <|start_header_id|>
+PARAMETER stop <|end_header_id|>
+PARAMETER stop <|eot_id|>
+```
+
+![Ollama](/img/post_pics/ai/ollama_zh.png)
+
+## 模型下载
+
+### 模型选择指引
 
 以下是中文LLaMA-2和Alpaca-2模型的对比以及建议使用场景。**如需聊天交互，请选择Alpaca而不是LLaMA。[^1]**
 
@@ -226,7 +238,7 @@ You are a helpful assistant. 你是一个乐于助人的助手。
 | 不适用场景               |                              指令理解 、多轮聊天等                               |                                文本无限制自由生成                                |
 | 偏好对齐                 |                                        无                                        |                               RLHF版本（1.3B、7B）                               |
 
-## 完整模型下载
+### 完整模型下载
 
 以下是完整版模型，直接下载即可使用，无需其他合并步骤。推荐网络带宽充足的用户。
 
@@ -239,7 +251,98 @@ You are a helpful assistant. 你是一个乐于助人的助手。
 | Chinese-Alpaca-2-7B   | 指令模型 | 12.9 GB |   [[Baidu]](https://pan.baidu.com/s/1wxx-CdgbMupXVRBcaN4Slw?pwd=kpn9) [[Google]](https://drive.google.com/drive/folders/1JsJDVs7tE2y31PBNleBlDPsB7S0ZrY8d?usp=share_link) ；[[🤗HF]](https://huggingface.co/hfl/chinese-alpaca-2-7b) ；[[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/chinese-alpaca-2-7b)   |  [[🤗HF]](https://huggingface.co/hfl/chinese-alpaca-2-7b-gguf)  |
 | Chinese-Alpaca-2-1.3B | 指令模型 | 2.4 GB  | [[Baidu]](https://pan.baidu.com/s/1PD7Ng-ltOIdUGHNorveptA?pwd=ar1p) [[Google]](https://drive.google.com/drive/folders/1h6qOy-Unvqs1_CJ8uPp0eKC61Gbbn8n7?usp=share_link) ；[[🤗HF]](https://huggingface.co/hfl/chinese-alpaca-2-1.3b) ；[[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/chinese-alpaca-2-1.3b) | [[🤗HF]](https://huggingface.co/hfl/chinese-alpaca-2-1.3b-gguf) |
 
-## 参考
+### 长上下文版模型
+
+以下是长上下文版模型，**推荐以长文本为主的下游任务使用**，否则建议使用上述标准版。
+
+| 模型名称                  |   类型   |  大小   |                                                                                                                                                              下载地址                                                                                                                                                               |                               GGUF                                |
+| :------------------------ | :------: | :-----: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------: |
+| Chinese-LLaMA-2-7B-64K 🆕  | 基座模型 | 12.9 GB |   [[Baidu]](https://pan.baidu.com/s/1ShDQ2FG2QUJrvfnxCn4hwQ?pwd=xe5k) [[Google]](https://drive.google.com/drive/folders/17l9xJx55L2YNpqt7NiLVQzOZ6fV4rzJ-?usp=share_link)[[🤗HF]](https://huggingface.co/hfl/chinese-llama-2-7b-64k) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/chinese-llama-2-7b-64k)   |  [[🤗HF]](https://huggingface.co/hfl/chinese-llama-2-7b-64k-gguf)  |
+| Chinese-Alpaca-2-7B-64K 🆕 | 指令模型 | 12.9 GB |  [[Baidu]](https://pan.baidu.com/s/1KBAr9PCGvX2oQkYfCuLEjw?pwd=sgp6) [[Google]](https://drive.google.com/drive/folders/13G_d5xcDnhtaMOaulj1BFiZbVoVwJ-Cu?usp=share_link)[[🤗HF]](https://huggingface.co/hfl/chinese-alpaca-2-7b-64k) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/chinese-alpaca-2-7b-64k)  | [[🤗HF]](https://huggingface.co/hfl/chinese-alpaca-2-7b-64k-gguf)  |
+| Chinese-LLaMA-2-13B-16K   | 基座模型 | 24.7 GB |  [[Baidu]](https://pan.baidu.com/s/1XWrh3Ru9x4UI4-XmocVT2w?pwd=f7ik) [[Google]](https://drive.google.com/drive/folders/1nii6lF0DgB1u81CnsE4cCK2jD5oq_OW-?usp=share_link)[[🤗HF]](https://huggingface.co/hfl/chinese-llama-2-13b-16k) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/chinese-llama-2-13b-16k)  | [[🤗HF]](https://huggingface.co/hfl/chinese-llama-2-13b-16k-gguf)  |
+| Chinese-LLaMA-2-7B-16K    | 基座模型 | 12.9 GB |   [[Baidu]](https://pan.baidu.com/s/1ZH7T7KU_up61ugarSIXw2g?pwd=pquq) [[Google]](https://drive.google.com/drive/folders/1Zc6jI5bl3myQbQsY79dWJJ8mP_fyf3iF?usp=share_link)[[🤗HF]](https://huggingface.co/hfl/chinese-llama-2-7b-16k) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/chinese-llama-2-7b-16k)   |  [[🤗HF]](https://huggingface.co/hfl/chinese-llama-2-7b-16k-gguf)  |
+| Chinese-Alpaca-2-13B-16K  | 指令模型 | 24.7 GB | [[Baidu]](https://pan.baidu.com/s/1gIzRM1eg-Xx1xV-3nXW27A?pwd=qi7c) [[Google]](https://drive.google.com/drive/folders/1mOkYQCvEqtGoZ9DaIpYFweSkSia2Q0vl?usp=share_link)[[🤗HF]](https://huggingface.co/hfl/chinese-alpaca-2-13b-16k) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/chinese-alpaca-2-13b-16k) | [[🤗HF]](https://huggingface.co/hfl/chinese-alpaca-2-13b-16k-gguf) |
+| Chinese-Alpaca-2-7B-16K   | 指令模型 | 12.9 GB |  [[Baidu]](https://pan.baidu.com/s/1Qk3U1LyvMb1RSr5AbiatPw?pwd=bfis) [[Google]](https://drive.google.com/drive/folders/1KBRSd2xAhiVQmamfA5wpm5ovYFRKuMdr?usp=share_link)[[🤗HF]](https://huggingface.co/hfl/chinese-alpaca-2-7b-16k) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/chinese-alpaca-2-7b-16k)  | [[🤗HF]](https://huggingface.co/hfl/chinese-alpaca-2-7b-16k-gguf)  |
+
+# llama 3
+
+- [Chinese-LLaMA-Alpaca-3](https://github.com/ymcui/Chinese-LLaMA-Alpaca-3)
+- [llama-3-chinese-8b-instruct-v3-gguf](https://huggingface.co/hfl/llama-3-chinese-8b-instruct-v3-gguf/tree/main)
+
+## 模型下载
+
+| 模型名称                                          |                                                                                                                                       完整版                                                                                                                                        |                                                                                                                                               LoRA版                                                                                                                                               |                                                                                           GGUF版                                                                                            |
+| :------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| **Llama-3-Chinese-8B-Instruct-v3**(指令模型) | [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b-instruct-v3) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-v3)[[🟣wisemodel]](https://wisemodel.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-v3) |                                                                                                                                                N/A                                                                                                                                                 | [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b-instruct-v3-gguf) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-v3-gguf) |
+| **Llama-3-Chinese-8B-Instruct-v2**(指令模型) | [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b-instruct-v2) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-v2)[[🟣wisemodel]](https://wisemodel.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-v2) | [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b-instruct-v2-lora) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-v2-lora)[[🟣wisemodel]](https://wisemodel.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-v2-lora) | [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b-instruct-v2-gguf) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-v2-gguf) |
+| **Llama-3-Chinese-8B-Instruct**(指令模型)    |     [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b-instruct) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct)[[🟣wisemodel]](https://wisemodel.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct)      |     [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b-instruct-lora) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-lora)[[🟣wisemodel]](https://wisemodel.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-lora)      |    [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b-instruct-gguf) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-instruct-gguf)    |
+| **Llama-3-Chinese-8B**(基座模型)             |                   [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b)[[🟣wisemodel]](https://wisemodel.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b)                   |                   [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b-lora) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-lora)[[🟣wisemodel]](https://wisemodel.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-lora)                   |             [[🤗HF]](https://huggingface.co/hfl/llama-3-chinese-8b-gguf) [[🤖ModelScope]](https://modelscope.cn/models/ChineseAlpacaGroup/llama-3-chinese-8b-gguf)             |
+
+## 部署
+
+- [llama.cpp 部署](https://github.com/ymcui/Chinese-LLaMA-Alpaca-3/wiki/llamacpp_zh)
+- `chat_llama3.sh`:
+
+```bash
+FIRST_INSTRUCTION=$2
+SYSTEM_PROMPT="You are a helpful assistant. 你是一个乐于助人的助手。"
+
+./llama-cli -m $1 --color -i \
+-c 0 -t 6 --temp 0.2 --repeat_penalty 1.1 -ngl 999 \
+-r '<|eot_id|>' \
+--in-prefix '<|start_header_id|>user<|end_header_id|>\n\n' \
+--in-suffix '<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n' \
+-p "<|start_header_id|>system<|end_header_id|>\n\n$SYSTEM_PROMPT<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n$FIRST_INSTRUCTION<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+```
+
+- 运行：
+
+```bash
+$ ./chat_llama3.sh model/llama-3-chinese-8b-instruct-v3-ggml-model-q8_0.gguf 介绍一下北京
+```
+
+## ollama 部署
+
+- `Modelfile_llama3`:
+
+```bash
+FROM D:\work\LLAMA-Chinese-Model\llama-3-chinese-8b-instruct-v3-ggml-model-q8_0.gguf
+TEMPLATE """{{ if .System }}<|start_header_id|>system<|end_header_id|>
+
+{{ .System }}<|eot_id|>{{ end }}{{ if .Prompt }}<|start_header_id|>user<|end_header_id|>
+
+{{ .Prompt }}<|eot_id|>{{ end }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ .Response }}<|eot_id|>"""
+SYSTEM """You are a helpful assistant. 你是一个乐于助人的助手。"""
+PARAMETER temperature 0.2
+PARAMETER num_keep 24
+PARAMETER stop <|start_header_id|>
+PARAMETER stop <|end_header_id|>
+PARAMETER stop <|eot_id|>
+```
+
+- 运行
+
+```bash
+$ ollama create llama3-zh-inst -f Modelfile_llama3
+$ ollama run llama3-zh-inst
+```
+# 指令微调
+
+- 模型下载：[llama-3-chinese-8b-instruct-v3](https://huggingface.co/hfl/llama-3-chinese-8b-instruct-v3/tree/main)
+- 数据：[ruozhiba_gpt4](https://huggingface.co/datasets/hfl/ruozhiba_gpt4/tree/main)
+- 训练参考：[指令精调脚本](https://github.com/ymcui/Chinese-LLaMA-Alpaca-3/wiki/sft_scripts_zh)
+
+训练示意图：
+
+![Llama train](/img/post_pics/ai/llama_train_inst.png)
+
+报错：显存不足（TODO: 待解决）
+
+- [CUDA报错:Out of Memory](https://blog.csdn.net/Coldlebron/article/details/127575370)
+
+# 参考
 
 [^1]: 不建议单独使用1.3B模型，而是通过投机采样搭配更大的模型（7B、13B）使用。
 [^2]: 本项目一代模型和二代模型的词表不同，请勿混用。二代LLaMA和Alpaca的词表相同。
