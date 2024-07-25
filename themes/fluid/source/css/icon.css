@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4633230 */
+  src: url('//at.alicdn.com/t/c/font_4633230_rabn5oaxbxr.woff2?t=1721900158635') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4633230_rabn5oaxbxr.woff?t=1721900158635') format('woff'),
+       url('//at.alicdn.com/t/c/font_4633230_rabn5oaxbxr.ttf?t=1721900158635') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhiding:before {
+  content: "\e603";
+}
+
+.icon-zhiding1:before {
+  content: "\e890";
+}
+
+.icon-google-new:before {
+  content: "\e671";
+}
+
+.icon-baidu-new:before {
+  content: "\e66b";
+}
+
+.icon-zhihu-new:before {
+  content: "\e69a";
+}
+
+.icon-microsoft:before {
+  content: "\e677";
+}
+
+.icon-github-new:before {
+  content: "\e64c";
+}
+
+.icon-bilibili-new:before {
+  content: "\e62a";
+}
+
+.icon-gugefanyi:before {
+  content: "\e710";
+}
+
+.icon-pdf:before {
+  content: "\e740";
+}
+
+.icon-chatGPT:before {
+  content: "\e618";
+}
