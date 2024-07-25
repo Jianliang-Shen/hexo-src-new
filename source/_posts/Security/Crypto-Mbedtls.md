@@ -1,6 +1,7 @@
 ---
 title: 密码学介绍和Mbedtls相关实现
 date: 2024-01-20 13:49:37
+math: true
 tags:
     - Cryptography
     - TEE
@@ -433,18 +434,22 @@ typedef struct mbedtls_cipher_info_t
 - RSA算法
 
 $$
-密文=明文^E mod N,(E,N)是公钥\\
+密文=明文^E mod N,(E,N)是公钥
+$$
+
+$$
 明文=密文^D mod N,(D,N)是私钥
 $$
 
 - 算法：生成密钥对，准备两个很大的质数p和q
 
-$$
-N=p*q\\
-L=lcm(p-1,q-1),lcm表示求最小公倍数\\
-1<E<L,gcd(E,L) = 1,gcd表示求最大公约数（使用辗转相除法）\\
-1<D<L,E*DmodL=1
-$$
+$$N=p*q$$
+
+$$L=lcm(p-1,q-1),lcm表示求最小公倍数$$
+
+$$1<E<L,gcd(E,L) = 1,gcd表示求最大公约数（使用辗转相除法）$$
+
+$$1<D<L,E*DmodL=1$$
 
 - RSA攻击方法：一旦发现了对大整数进行质因数分解的高效算法， RSA 就能够被破译
   - 中间人攻击
