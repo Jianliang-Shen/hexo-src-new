@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GPU Architecture
-index_img: /img/post_pics/gpu/arch/19.png
+index_img: /img/post_pics/gpu/arch/gpu_index.png
 date: 2024-07-17 09:57:13
 tags:
     - Arch

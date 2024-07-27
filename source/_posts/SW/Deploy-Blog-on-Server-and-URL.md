@@ -1,6 +1,7 @@
 ---
 title: hexo部署博客并上传到域名上
 date: 2019-06-29 09:07:19
+index_img: /img/post_pics/index_img/hexo_index.png
 tags: 
     - Hexo
     - Linux

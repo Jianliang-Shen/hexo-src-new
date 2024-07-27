@@ -1,7 +1,7 @@
 ---
 title: 阿里云物联网开发入门篇
 date: 2019-11-08 14:08:05
-index_img: /img/post_pics/index_img/aliyun_data.jpeg
+index_img: /img/post_pics/index_img/aliyun_index.png
 tags:
     - Adruino
 categories: 

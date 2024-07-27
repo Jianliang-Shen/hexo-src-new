@@ -1,6 +1,7 @@
 ---
 title: 密码学介绍和Mbedtls相关实现
 date: 2024-01-20 13:49:37
+index_img: /img/post_pics/mbedtls/mbedtls_index.png
 math: true
 tags:
     - Cryptography

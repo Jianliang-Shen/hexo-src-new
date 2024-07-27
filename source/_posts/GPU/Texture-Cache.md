@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 纹理缓存
-index_img: /img/post_pics/gpu/tc.png
+index_img: /img/post_pics/gpu/tc_index.png
 date: 2024-04-26 10:28:15
 tags: 
     - Cache

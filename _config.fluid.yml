@@ -451,7 +451,7 @@ navbar:
         { key: 'Bilibili', link: 'https://www.bilibili.com/', icon: "iconfont icon-bilibili-new" },
         { key: 'Chatgpt', link: 'https://chat.openai.com/', icon: "iconfont icon-chatGPT" },
         { key: 'MSDN', link: 'https://msdn.itellyou.cn/', icon: "iconfont icon-microsoft" },
-        { key: 'Ali Icon', link: 'https://www.iconfont.cn/', icon: "iconfont icon-vercel" },
+        { key: 'Ali Icon', link: 'https://www.iconfont.cn/', icon: "iconfont icon-iconfont" },
       ]
     }
 

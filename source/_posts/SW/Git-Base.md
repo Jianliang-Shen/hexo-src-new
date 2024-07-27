@@ -1,6 +1,7 @@
 ---
 title: git工具使用指北
 date: 2021-03-31 21:40:59
+index_img: /img/post_pics/os/git.png
 tags:
     - Git
     - Tool
@@ -11,6 +12,8 @@ categories:
 Git常用命令
 
 <!-- more -->  
+
+- [Beginner’s Guide to proper Git Workflow](https://medium.com/@anjulapaulus_84798/beginners-guide-to-proper-git-workflow-35a2d967734e)
 
 ```bash
 git config --global color.ui auto

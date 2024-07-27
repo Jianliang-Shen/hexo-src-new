@@ -2,6 +2,7 @@
 layout: post
 title: GPU Note
 date: 2024-04-24 10:28:15
+index_img: /img/post_pics/gpu/gpu_note_index.png
 tags: 
     - Compute
     - GPU

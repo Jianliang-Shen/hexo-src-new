@@ -1,6 +1,7 @@
 ---
 title: 排序算法
 date: 2024-01-19 16:22:43
+index_img: /img/post_pics/sort/quick-sort.gif
 tags: 
     - C/C++
     - Algorithm
@@ -27,8 +28,12 @@ categories:
   
 <!-- more -->
 ## 冒泡排序
+
+![](/img/post_pics/sort/bubble-sort.gif)
+
 两两比较相邻结果，按要求的顺序互换位置。每次循环都使得极值移动到最后
-```
+
+```txt
 9  1  5  8  3  7  4  6👈2
 9  1  5  8  3  7  4👈2  6
 9  1  5  8  3  7👈2  4  6
@@ -39,10 +44,16 @@ categories:
 9👈1  2  5  8  3  7  4  6
 1  9  2  5  8  3  7  4  6
 ```
+
 可以增加一个flag作为有序的标志，避免无意义的比较。复杂度O(N^2)。
+
 ## 简单选择排序
+
+![](/img/post_pics/sort/selection-sort.gif)
+
 通过n-i次比较，找到m-i+1中的关键字最小的记录，并和第i个记录交换。复杂度O(N^2)。
-```
+
+```txt
 9  1  5  8  3  7  4  6  2
 |  |
 ↑←↓
@@ -51,6 +62,7 @@ categories:
    ↑←←←←←←←←←←←↓
 1  2  5  8  3  7  4  6  9
 ```
+
 ```cpp
     vector<int> vt = {9, 1, 5, 8, 3, 7, 4, 6, 2};
     int min_pos = 0;
@@ -68,50 +80,61 @@ categories:
         }
     }
 ```
+
 ## 直接插入排序
+
+![](/img/post_pics/sort/insertion-sort.gif)
+
 将一个记录插入到一个已经排好序的有序表中，从而得到一个新的、记录数增1的有序表。复杂度O(N^2)。
+
 ```cpp
-	vector<int> vt = {13, 5, 3, 4, 6, 2, 8, 22, 1, 7};
-	int len = vt.size();
-	int j;
-	for (int i = 1; i < len; i++)
-	{
-		if (vt[i] < vt[i - 1])
-		{
-			int tmp = vt[i];              //临时保存vt[i]的值
-			for (j = i - 1; vt[j] > tmp; j--)
-			{
-				vt[j + 1] = vt[j];    //将比vt[i]大的数全部向右移动1位
-			}
-			vt[j + 1] = tmp;
-		}
-	}
+ vector<int> vt = {13, 5, 3, 4, 6, 2, 8, 22, 1, 7};
+ int len = vt.size();
+ int j;
+ for (int i = 1; i < len; i++)
+ {
+  if (vt[i] < vt[i - 1])
+  {
+   int tmp = vt[i];              //临时保存vt[i]的值
+   for (j = i - 1; vt[j] > tmp; j--)
+   {
+    vt[j + 1] = vt[j];    //将比vt[i]大的数全部向右移动1位
+   }
+   vt[j + 1] = tmp;
+  }
+ }
 ```
+
 ## 希尔排序
+
 将复杂度提高到O(NlogN)。
 基本有序：小的元素基本在左边，大的元素基本在右边
 希尔排序原理：将无序的数组折中排为基本有序数组，再次折中进一步排为更“细致”的基本有序数组。
+
 ```cpp
-	vector<int> vt = {0, 13, 7, 3, 4, 6, 2, 8, 22};   //有部分bug，vt[0]不参与排序
-	int len = vt.size();
-	int i, j;
-	int increment = len;
-	do
-	{
-		increment = increment / 3 + 1;     //具体的增量序列仍然没有较好的公式
-		for (i = increment + 1; i < len; i++)
-		{
-			if (vt[i] < vt[i - increment])
-			{
-				int tmp = vt[i];
-				vt[i] = vt[i - increment];
-				vt[i - increment] = tmp;
-			}
-		}
-	} while (increment > 1);
+ vector<int> vt = {0, 13, 7, 3, 4, 6, 2, 8, 22};   //有部分bug，vt[0]不参与排序
+ int len = vt.size();
+ int i, j;
+ int increment = len;
+ do
+ {
+  increment = increment / 3 + 1;     //具体的增量序列仍然没有较好的公式
+  for (i = increment + 1; i < len; i++)
+  {
+   if (vt[i] < vt[i - increment])
+   {
+    int tmp = vt[i];
+    vt[i] = vt[i - increment];
+    vt[i - increment] = tmp;
+   }
+  }
+ } while (increment > 1);
 ```
+
 ## 堆排序
+
 ### 数据结构--堆
+
 `堆（Heap）`是每个结点的值都`大于等于`（或者小于等于）其左右孩子的结点的值的`完全二叉树`，前者称之为`大顶堆`，后者称之为`小顶堆`。
 `完全二叉树`的定义：对一棵具有n个结点的二叉树按`层序遍历`，如果编号为i的结点与`同样深度的满二叉树`中编号为i的结点位置完全相同，则为完全二叉树。
 
@@ -132,12 +155,17 @@ k[i] >= k[2i+1]
 1 <= i <= n/2
 完全二叉树的当前结点编号为i，左孩为2i，右孩为2i+1
 ```
+
 ### 堆排序原理
+
+![](/img/post_pics/sort/heap-sort.gif)
+
 堆排序要解决两个问题：
-* 如何将无序数组转变为堆
-  * 递归建立
-* 如何处理大顶堆
-  * 依次交换
+
+- 如何将无序数组转变为堆
+  - 递归建立
+- 如何处理大顶堆
+  - 依次交换
   
 ### 堆排序代码
 
@@ -152,91 +180,89 @@ using namespace std; //堆排序的核心是建堆,传入参数为数组，根�
 #define MAXSIZE 2000000
 void Heap_build(int a[], int root, int length)
 {
-	int lchild = root * 2 + 1; //根节点的左子结点下标
-	if (lchild < length)	   //左子结点下标不能超出数组的长度
-	{
-		int flag = lchild;		 //flag保存左右节点中最大值的下标
-		int rchild = lchild + 1; //根节点的右子结点下标
-		if (rchild < length)	 //右子结点下标不能超出数组的长度(如果有的话)
-		{
-			if (a[rchild] > a[flag]) //找出左右子结点中的最大值
-			{
-				flag = rchild;
-			}
-		}
-		if (a[root] < a[flag])
-		{
-			//交换父结点和比父结点大的最大子节点
-			swap(a[root], a[flag]);
-			//从此次最大子节点的那个位置开始递归建堆
-			Heap_build(a, flag, length);
-		}
-	}
+ int lchild = root * 2 + 1; //根节点的左子结点下标
+ if (lchild < length)    //左子结点下标不能超出数组的长度
+ {
+  int flag = lchild;   //flag保存左右节点中最大值的下标
+  int rchild = lchild + 1; //根节点的右子结点下标
+  if (rchild < length)  //右子结点下标不能超出数组的长度(如果有的话)
+  {
+   if (a[rchild] > a[flag]) //找出左右子结点中的最大值
+   {
+    flag = rchild;
+   }
+  }
+  if (a[root] < a[flag])
+  {
+   //交换父结点和比父结点大的最大子节点
+   swap(a[root], a[flag]);
+   //从此次最大子节点的那个位置开始递归建堆
+   Heap_build(a, flag, length);
+  }
+ }
 }
 
 void Heap_sort(int a[], int len)
 {
-	for (int i = len / 2; i >= 0; --i) //从最后一个非叶子节点的父结点开始建堆
-	{
-		Heap_build(a, i, len);
-	}
+ for (int i = len / 2; i >= 0; --i) //从最后一个非叶子节点的父结点开始建堆
+ {
+  Heap_build(a, i, len);
+ }
 
-	for (int j = len - 1; j > 0; --j) //j表示数组此时的长度，因为len长度已经建过了，从len-1开始
-	{
-		swap(a[0], a[j]);	 //交换首尾元素,将最大值交换到数组的最后位置保存
-		Heap_build(a, 0, j); //去除最后位置的元素重新建堆，此处j表示数组的长度，最后一个位置下标变为len-2
-	}
+ for (int j = len - 1; j > 0; --j) //j表示数组此时的长度，因为len长度已经建过了，从len-1开始
+ {
+  swap(a[0], a[j]);  //交换首尾元素,将最大值交换到数组的最后位置保存
+  Heap_build(a, 0, j); //去除最后位置的元素重新建堆，此处j表示数组的长度，最后一个位置下标变为len-2
+ }
 }
 
 void insertSort(int vt[], int len)
 {
-	//vector<int> vt = {13, 5, 3, 4, 6, 2, 8, 22, 1, 7};
-	//int len = vt.size();
-	int j;
-	for (int i = 1; i < len; i++)
-	{
-		if (vt[i] < vt[i - 1])
-		{
-			int tmp = vt[i]; //临时保存vt[i]的值
-			for (j = i - 1; vt[j] > tmp; j--)
-			{
-				vt[j + 1] = vt[j]; //将比vt[i]大的数全部向右移动1位
-			}
-			vt[j + 1] = tmp;
-		}
-	}
+ //vector<int> vt = {13, 5, 3, 4, 6, 2, 8, 22, 1, 7};
+ //int len = vt.size();
+ int j;
+ for (int i = 1; i < len; i++)
+ {
+  if (vt[i] < vt[i - 1])
+  {
+   int tmp = vt[i]; //临时保存vt[i]的值
+   for (j = i - 1; vt[j] > tmp; j--)
+   {
+    vt[j + 1] = vt[j]; //将比vt[i]大的数全部向右移动1位
+   }
+   vt[j + 1] = tmp;
+  }
+ }
 }
 int main(int argc, char **argv)
 {
-	int a[MAXSIZE];
-	for (int i = 0; i < MAXSIZE; i++)
-	{
-		a[i] = rand() % MAXSIZE;
-	}
+ int a[MAXSIZE];
+ for (int i = 0; i < MAXSIZE; i++)
+ {
+  a[i] = rand() % MAXSIZE;
+ }
 #if 1
-	clock_t Start_time = clock();
-	Heap_sort(a, MAXSIZE);
-	clock_t End_time = clock();
-	cout << "Total Heap_sort running time is: " << static_cast<double>(End_time - Start_time) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+ clock_t Start_time = clock();
+ Heap_sort(a, MAXSIZE);
+ clock_t End_time = clock();
+ cout << "Total Heap_sort running time is: " << static_cast<double>(End_time - Start_time) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
 #endif
 #if 0
-	clock_t Start_time = clock();
-	insertSort(a, MAXSIZE);
-	clock_t End_time = clock();
-	cout << "Total insertSort running time is: " << static_cast<double>(End_time - Start_time) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+ clock_t Start_time = clock();
+ insertSort(a, MAXSIZE);
+ clock_t End_time = clock();
+ cout << "Total insertSort running time is: " << static_cast<double>(End_time - Start_time) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
 #endif
-	for (size_t i = 0; i < 100; ++i)
-	{
-		cout << a[i] << " ";
-	}
-	cout << endl;
-	return 0;
+ for (size_t i = 0; i < 100; ++i)
+ {
+  cout << a[i] << " ";
+ }
+ cout << endl;
+ return 0;
 }
 ```
 
-
 ### 堆排序测试
-
 
 ```c
 #include <iostream>
@@ -381,10 +407,10 @@ int main(int argc, char **argv)
         a[i] = rand() % MAXSIZE;
     }
 #if 0
-	clock_t Start_time = clock();
-	Heap_sort(a, MAXSIZE);
-	clock_t End_time = clock();
-	cout << "Total Heap_sort running time is: " << static_cast<double>(End_time - Start_time) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
+ clock_t Start_time = clock();
+ Heap_sort(a, MAXSIZE);
+ clock_t End_time = clock();
+ cout << "Total Heap_sort running time is: " << static_cast<double>(End_time - Start_time) / CLOCKS_PER_SEC * 1000 << " ms" << endl;
 #endif
 
 #if 1
@@ -416,6 +442,7 @@ int main(int argc, char **argv)
     return 0;
 }
 ```
+
 堆排序时间复杂度测试：(相同时间种子)  
   
 | 数组长度 50000   | 插入排序   | 堆排序    |
@@ -431,9 +458,12 @@ int main(int argc, char **argv)
 | ARM linux运行时间 | 5894.98 ms |  
 
 ## 归并排序
+
 归并排序是一种稳定排序。
 
 ## 快速排序
+
+![](/img/post_pics/sort/quick-sort.gif)
 
 ```cpp
 #include <iostream>

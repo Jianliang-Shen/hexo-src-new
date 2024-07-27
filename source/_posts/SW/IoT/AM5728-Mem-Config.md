@@ -1,7 +1,7 @@
 ---
 title: AM5728配置DMM_LISA_MAP修改内存工作模式
 date: 2019-11-08 13:30:34
-index_img: /img/post_pics/index_img/am5728_ram.png
+index_img: /img/post_pics/index_img/am5728_index.png
 tags: 
     - Linux
     - Memory

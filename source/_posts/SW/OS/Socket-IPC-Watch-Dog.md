@@ -1,7 +1,7 @@
 ---
 title: socket进程间通信及喂狗框架
 date: 2019-09-13 23:24:34
-index_img: /img/post_pics/index_img/服务器软件框图.bmp
+index_img: /img/post_pics/index_img/tcpip_index.png
 tags: 
     - Linux
     - Net

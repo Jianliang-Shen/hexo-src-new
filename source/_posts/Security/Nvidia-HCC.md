@@ -2,8 +2,7 @@
 layout: post
 title: "机密计算: Hopper Confidential Compute"
 date: 2024-04-04 10:26:14
-index_img: /img/post_pics/HCC/7.png
-archive: true
+index_img: /img/post_pics/HCC/hcc_index.png
 tags: 
     - Compute
     - TEE

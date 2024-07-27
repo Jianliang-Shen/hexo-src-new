@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 硬件安全 - 从SoC设计到系统级防御
-date: 2024-03-29 22:25:49
-archive: true
+date: 2024-03-29 22:25:4
+index_img: /img/post_pics/cc/hw_security_index.png
 tags:
     - Hardware
     - TEE
@@ -55,7 +55,7 @@ categories:
 
  针对硬件安全的研究相对较晚，因此硬件常被用作系统的信任锚（i.e.信任根)。随着电子硬件生产的新趋势，基于IP核的芯片设计、长且分散的电子元件制造分销链，导致了众多安全问题。
 
-![](/img/post_pics/os/attack.png)
+![](/img/post_pics/cc/hw_security_attack.png)
 
 #### 1.4 攻击、漏洞和对策
 

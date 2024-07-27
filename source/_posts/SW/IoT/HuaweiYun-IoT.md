@@ -1,7 +1,7 @@
 ---
 title: 华为云物联网设备接入及OBS使用
 date: 2020-06-16 14:01:17
-index_img: /img/post_pics/index_img/hardware.jpg
+index_img: /img/post_pics/index_img/huaweiyun_index.png
 tags: 
     - Linux
 categories: 

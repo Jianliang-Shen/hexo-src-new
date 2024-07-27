@@ -3,7 +3,6 @@ layout: post
 title: 机密计算联盟 CCC
 index_img: /img/post_pics/cc/ccc1.png
 date: 2024-07-18 20:18:02
-archive: true
 tags:
     - Confidential Compute
     - Security

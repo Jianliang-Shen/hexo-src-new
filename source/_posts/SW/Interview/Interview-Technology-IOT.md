@@ -1,7 +1,7 @@
 ---
 title: 嵌入式软件基础知识-C/C++
 date: 2020-6-25 19:13:09
-index_img: /img/post_pics/index_img/embedded_c.png
+index_img: /img/post_pics/index_img/iot_index.jpg
 tags: 
     - C/C++
     - Linux

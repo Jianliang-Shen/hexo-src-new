@@ -3,7 +3,6 @@ layout: post
 title: "机密计算: Spectre漏洞和原理"
 date: 2024-03-26 21:56:48
 index_img: /img/post_pics/os/spectre-meltdown.jpg
-archive: true
 tags:
     - TEE
     - Cache

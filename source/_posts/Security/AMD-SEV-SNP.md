@@ -3,7 +3,6 @@ layout: post
 title: "机密计算: AMD SEV-SNP 白皮书"
 index_img: /img/post_pics/cc/amd-cc-1.png
 date: 2024-07-18 13:31:57
-archive: true
 tags: 
     - TEE
     - Confidential Compute

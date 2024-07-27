@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Proxy Extension for Edge
-index_img: /img/post_pics/proxy/2-1.png
+index_img: /img/post_pics/proxy/proxy_index.png
 date: 2024-07-17 16:52:28
 tags:
     - Net

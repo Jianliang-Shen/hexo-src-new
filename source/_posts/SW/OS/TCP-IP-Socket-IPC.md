@@ -1,7 +1,7 @@
 ---
 title: 基于TCP/IP网络socket通信
 date: 2019-08-09 12:51:01
-index_img: /img/post_pics/tcpip/协议2.png
+index_img: /img/post_pics/index_img/socket_logo.png
 tags: 
     - Linux
     - Net

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "机密计算: HCC 驱动代码"
+index_img: /img/post_pics/HCC/hcc2_index.png
 date: 2024-07-02 14:43:10
 tags:
     - TEE

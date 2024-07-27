@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CUDA并行程序设计
-index_img: /img/post_pics/cuda/book.jpeg
+index_img: /img/post_pics/cuda/Nvidia_CUDA_Logo.jpg
 date: 2024-04-04 10:28:15
 tags: 
     - Compute

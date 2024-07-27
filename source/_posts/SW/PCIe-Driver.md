@@ -1,6 +1,7 @@
 ---
 title: PCI设备命令
 date: 2024-05-27 19:11:42
+index_img: /img/post_pics/gpu/pcie_index.png
 tags:
     - Linux
     - Driver
