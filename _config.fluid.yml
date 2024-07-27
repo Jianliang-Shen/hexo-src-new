@@ -444,6 +444,7 @@ navbar:
       link: '#',
       submenu: [
         { key: 'Vercel', link: 'https://vercel.com/jianliang-shens-projects', icon: "iconfont icon-vercel" },
+        { key: 'PDF', link: '/pdf/', icon: "iconfont icon-pdf-new" },
         { key: 'Google', link: 'https://www.google.com/', icon: "iconfont icon-google-new" },
         { key: 'Baidu', link: 'https://www.baidu.com/', icon: "iconfont icon-baidu-new" },
         { key: 'Github', link: 'https://github.com/Jianliang-Shen', icon: "iconfont icon-github-new" },
@@ -1067,6 +1068,11 @@ about:
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com/Jianliang-Shen", tip: "GitHub" }
 
+
+pdf:
+  banner_img: /img/back_1.jpg
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
 
 #---------------------------
 # 自定义页
