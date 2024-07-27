@@ -24,7 +24,22 @@
               for (const k of keys) {
                 var value = result[k];
                 if (typeof value === 'string') {
-                  apiText = value;
+                  apiText = value.slice(0, -1);
+                  break;
+                } else if (value instanceof Object) {
+                  result = value;
+                }
+              }
+              var author = '<%= theme.index.slogan.api.author %>'.split(',');
+              if (result instanceof Array) {
+                result = result[0];
+              }
+              for (const k of author) {
+                var value = result[k];
+                if (typeof value === 'string') {
+                  if (value) {
+                    apiText += ' —— ' + value;
+                  }
                   break;
                 } else if (value instanceof Object) {
                   result = value;
