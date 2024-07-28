@@ -18,6 +18,16 @@ categories:
 
 <!-- more -->
 
+# 机密计算
+
+- [多家巨头入局，机密计算能否成为数据安全的终结者？](https://www.secrss.com/articles/34593)
+- [当 Kubernetes 遇到机密计算，阿里巴巴如何保护容器内数据的安全？](https://www.kubernetes.org.cn/8323.html)
+- [龙蜥社区：2023云原生机密计算最佳实践白皮书](https://openanolis.cn/assets/static/confidentialComputing.pdf)
+- [好书相赠！《机密计算：AI数据安全和隐私保护》](https://www.sohu.com/a/670027466_121394207)
+- [鲲鹏芯片及通用机密计算平台技术](https://ai.zhiding.cn/2024/0529/3158121.shtml)
+- [【机密计算】关于机密计算的五大须知](https://architect.pub/book/export/html/1290)
+- [google 机密计算](https://cloud.google.com/security/products/confidential-computing?hl=zh-CN)
+
 # 可信认证
 
 如何拿到合法的公钥：
