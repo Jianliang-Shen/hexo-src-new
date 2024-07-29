@@ -170,6 +170,26 @@ echo
 
 {% endfold %}
 
+## Jetson Orin Nano
+
+- [Your GPU Compute Capability](https://developer.nvidia.com/cuda-gpus)
+- [chinese-alpaca-2-1.3b-gguf](https://huggingface.co/hfl/chinese-alpaca-2-1.3b-gguf) 下载 `q_2k` 版本，其他未测试
+
+因为cuda版本低，编译llama.cpp前需要指定计算能力:
+
+```bash
+export CUDA_DOCKER_ARCH=compute_87
+make GGML_CUDA=1 -j 4
+```
+
+其他配置同上
+
+![Jetson 运行 Llama](/img/post_pics/ai/llama_jetson.png)
+
+{% note primary %}
+第一次执行导入模型会很慢，之后会变快很多。图右边为`jtop`指令显示GPU占用情况。
+{% endnote %}
+
 ## ollama 部署
 
 - [ollama部署体验Chinese-LLaMA-Alpaca-3大模型项目](https://blog.csdn.net/nlpstarter/article/details/138910697)

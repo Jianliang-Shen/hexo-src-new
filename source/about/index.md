@@ -1,16 +1,15 @@
 ---
-title: 标题
+title: Author
 layout: about
 ---
 
-
-## 联系方式
+## Contact
 <!-- 电话：`158 9589 8063（南京）`、`137 7789 3667（杭州）` -->
 
-邮箱：`2823626197@qq.com`
-地址：上海
+Mail: `2823626197@qq.com`
+Address: Shanghai
 
-## 个人简介
+## About
 
 - 2021-2024 arm
 - 2024-     Hygon
