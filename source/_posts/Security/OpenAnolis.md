@@ -19,7 +19,7 @@ categories:
 - [Hygon Arch](https://openanolis.cn/sig/Hygon-Arch)
 - [Cloud Native Confidential Computing SIG](https://openanolis.cn/sig/coco)
 
-<iframe src="/pdf/2023云原生机密计算最佳实践白皮书.pdf" width="100%" height="800" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
+<iframe src="/pdf/cc/2023云原生机密计算最佳实践白皮书.pdf" width="100%" height="800" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
 
 # 龙蜥简介
 

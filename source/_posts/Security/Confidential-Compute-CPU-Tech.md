@@ -342,7 +342,7 @@ $ ./dh_client
 
 参考：
 
-- [SM4分组密码算法国家标准](/pdf/SM4分组密码算法.pdf)
+- [SM4分组密码算法国家标准](/pdf/sm/SM4分组密码算法.pdf)
   - [更多标准](https://github.com/guanzhi/GM-Standards)
   - [密码行业标准化技术委员会](http://www.gmbz.org.cn/main/bzlb.html)
 - [国密加密算法sm4](https://n0va-scy.github.io/2022/02/14/sm4加密算法/)
@@ -522,5 +522,5 @@ Hello World
 
 ## SM2 密钥交换协议
 
-- [SM2密钥交换协议](/pdf/SM2密钥交换协议.pdf)
+- [SM2密钥交换协议](/pdf/sm/SM2密钥交换协议.pdf)
 - [GMSSL 国密SSL实验室](https://www.gmssl.cn/gmssl/index.jsp?go=down)

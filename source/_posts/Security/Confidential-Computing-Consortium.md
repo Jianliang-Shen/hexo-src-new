@@ -16,7 +16,7 @@ Confidential Computing Consortium (CCC).
 
 # 机密计算的常用术语
 
-[PDF: Common Terminology for Confidential Computing](/pdf/Common-Terminology-for-Confidential-Computing.pdf)
+[PDF: Common Terminology for Confidential Computing](/pdf/ccc/Common-Terminology-for-Confidential-Computing.pdf)
 
 ## 简介
 
@@ -95,7 +95,7 @@ Confidential Computing Consortium (CCC).
 
 # 机密计算的技术分析
 
-[PDF: A Technical Analysis of Confidential Computing](/pdf/A-Technical-Analysis-of-Confidential-Computing.pdf)
+[PDF: A Technical Analysis of Confidential Computing](/pdf/ccc/A-Technical-Analysis-of-Confidential-Computing.pdf)
 
 </details>
 
@@ -103,7 +103,7 @@ Confidential Computing Consortium (CCC).
 
 在传统计算中，数据有三种状态：传输中、静止和使用中。通过网络传输的数据是“传输中”，存储中的数据是“静止”，正在处理的数据是“使用中”。在我们不断存储、使用和共享敏感数据（从信用卡数据到医疗记录，从防火墙配置到我们的地理位置数据）的世界中，保护所有状态下的敏感数据比以往任何时候都更加重要。现在通常使用加密技术来提供数据机密性（阻止未经授权的查看）和数据完整性（防止或检测未经授权的更改）。虽然现在通常使用保护传输中和静止数据的技术，但第三种状态 - 保护使用中的数据 - 是新的前沿。
 
-[PDF: 机密计算联盟白皮书](/pdf/CCC_outreach_whitepaper_updated_November_2022.pdf)概述了机密计算如何解决此问题，以及用例和动机。本文为技术受众提供了更多详细信息。
+[PDF: 机密计算联盟白皮书](/pdf/ccc/CCC_outreach_whitepaper_updated_November_2022.pdf)概述了机密计算如何解决此问题，以及用例和动机。本文为技术受众提供了更多详细信息。
 
 ## 机密计算
 
@@ -149,7 +149,7 @@ TAC 对行业中与保护使用中数据相关的各种术语进行了调查，�
 
 ![](/img/post_pics/cc/ccc4.png)
 
-不幸的是，与“机密计算”一词不同，图表中使用的几个术语有多个相互竞争的定义。例如，“隐私保护计算”被定义为与多方计算同义，或涵盖多方计算和同态加密，甚至（例如在 [UN Handbook on Privacy-Preserving Computation Techniques](/pdf/UN-Handbook-for-Privacy-Preserving-Techniques.pdf) 中）涵盖保护使用中数据的整个空间。
+不幸的是，与“机密计算”一词不同，图表中使用的几个术语有多个相互竞争的定义。例如，“隐私保护计算”被定义为与多方计算同义，或涵盖多方计算和同态加密，甚至（例如在 [UN Handbook on Privacy-Preserving Computation Techniques](/pdf/cc/UN-Handbook-for-Privacy-Preserving-Techniques.pdf) 中）涵盖保护使用中数据的整个空间。
 
 此图说明了为什么我们将机密计算称为使用基于硬件的 TEE 保护使用中数据，以将其与其他技术区分开来。
 
@@ -315,7 +315,7 @@ CCC 对工作负全部责任，个别 CCC 成员可能没有贡献或参与，�
 
 # 机密计算：基于硬件的应用程序和数据可信执行
 
-[机密计算：基于硬件的应用程序和数据可信执行](/pdf/CCC_outreach_whitepaper_updated_November_2022.pdf)
+[机密计算：基于硬件的应用程序和数据可信执行](/pdf/ccc/CCC_outreach_whitepaper_updated_November_2022.pdf)
 
 ## 简介
 

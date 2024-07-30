@@ -438,8 +438,9 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
+    - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     - {
-      key: 'links',
+      key: 'Favor',
       icon: 'iconfont icon-bookmark-fill',
       link: '#',
       submenu: [
@@ -1062,9 +1063,10 @@ about:
   banner_img: /img/back_1.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
-  avatar: /img/avatar.png
-  name: "Jianliang"
-  intro: "GPU KMD/IoT/Software Engineer"
+  # avatar: /img/avatar.png
+  avatar: /img/xiaomai.jpg
+  name: "Yan Jing"
+  intro: "Security Software Engineer - IoT/GPU/Firmware"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
@@ -1116,22 +1118,22 @@ links:
   # Member item of page
   items:
     - {
-      title: "Fluid Blog",
-      intro: "主题博客",
-      link: "https://hexo.fluid-dev.com/",
-      avatar: "/img/favicon.png"
+      title: "极术社区",
+      intro: "连接开发者与智能计算生态",
+      link: "https://aijishu.com/",
+      avatar: "/img/post_pics/icon/jishu.png"
     }
     - {
-      title: "Fluid Docs",
-      intro: "主题使用指南",
-      link: "https://hexo.fluid-dev.com/docs/",
-      avatar: "/img/favicon.png"
+      title: "iconfont",
+      intro: "阿里巴巴矢量图标管理",
+      link: "https://www.iconfont.cn/",
+      avatar: "/img/post_pics/icon/aliicon.png"
     }
     - {
-      title: "Fluid Repo",
-      intro: "主题 GitHub 仓库",
-      link: "https://github.com/fluid-dev/hexo-theme-fluid",
-      avatar: "/img/favicon.png"
+      title: "Fluid",
+      intro: "配置指南",
+      link: "https://hexo.fluid-dev.com/docs/start/",
+      avatar: "/img/post_pics/icon/fluid.png"
     }
 
   # 当成员头像加载失败时，替换为指定图片

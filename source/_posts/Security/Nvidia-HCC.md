@@ -40,17 +40,17 @@ NV GPU CC mode的关键技术：
 - 在开发者模式之外，禁用性能分析，缓解侧信道攻击
 - GPU提供ECC-384密钥对签名和设备标识符PDI实现认证，设备唯一私有密钥IK存放在反熔丝中。
 
-[开发人员如何利用机密计算保护 NVIDIA H100 上的应用程序和数据](/pdf/Confidential-Computing-The-Developer’s-View-to-Secure-an-Application-and-Data-on-NVIDIA-H100.pdf)
+[开发人员如何利用机密计算保护 NVIDIA H100 上的应用程序和数据](/pdf/hcc/Confidential-Computing-The-Developer’s-View-to-Secure-an-Application-and-Data-on-NVIDIA-H100.pdf)
 
-<iframe src="/pdf/Confidential-Computing-The-Developer’s-View-to-Secure-an-Application-and-Data-on-NVIDIA-H100.pdf" width="100%" height="540" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
+<iframe src="/pdf/hcc/Confidential-Computing-The-Developer’s-View-to-Secure-an-Application-and-Data-on-NVIDIA-H100.pdf" width="100%" height="540" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
 
-[Hopper 机密计算：其内部工作原理](/pdf/Hopper-Confidential-Computing-How-it-Works-under-the-Hood.pdf)
+[Hopper 机密计算：其内部工作原理](/pdf/hcc/Hopper-Confidential-Computing-How-it-Works-under-the-Hood.pdf)
 
-<iframe src="/pdf/Hopper-Confidential-Computing-How-it-Works-under-the-Hood.pdf" width="100%" height="540" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
+<iframe src="/pdf/hcc/Hopper-Confidential-Computing-How-it-Works-under-the-Hood.pdf" width="100%" height="540" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
 
 机密计算协会：[Confidential Computing Consortium](https://confidentialcomputing.io/)
-机密计算常用术语：[Common Terminology for Confidential Computing](/pdf/Common-Terminology-for-Confidential-Computing.pdf)
-白皮书：[HCC-Whitepaper-v1.0](/pdf/HCC-Whitepaper-v1.0.pdf)
+机密计算常用术语：[Common Terminology for Confidential Computing](/pdf/ccc/Common-Terminology-for-Confidential-Computing.pdf)
+白皮书：[HCC-Whitepaper-v1.0](/pdf/hcc/HCC-Whitepaper-v1.0.pdf)
 免费试用：[Confidential Computing | NVIDIA](https://www.nvidia.com/en-sg/data-center/solutions/confidential-computing/)
 部署guide：
 [NVIDIA Trusted Computing Solutions](https://docs.nvidia.com/nvtrust/index.html#guides)

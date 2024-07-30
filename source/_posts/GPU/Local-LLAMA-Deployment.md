@@ -190,6 +190,10 @@ make GGML_CUDA=1 -j 4
 第一次执行导入模型会很慢，之后会变快很多。图右边为`jtop`指令显示GPU占用情况。
 {% endnote %}
 
+测试长上下文 `7B q_2k`: [chinese-alpaca-2-7b-64k-gguf](https://huggingface.co/hfl/chinese-alpaca-2-7b-64k-gguf/tree/main), 显著提高了显存占用率。
+
+![Jetson 运行 Llama 7B](/img/post_pics/ai/llama_jetson2.png)
+
 ## ollama 部署
 
 - [ollama部署体验Chinese-LLaMA-Alpaca-3大模型项目](https://blog.csdn.net/nlpstarter/article/details/138910697)
