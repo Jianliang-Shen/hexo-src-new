@@ -3,6 +3,7 @@ layout: post
 title: "机密计算: 10 大隐私计算技术"
 date: 2024-07-30 14:44:04
 index_img: /img/post_pics/cc/privacy_index.jpg
+archive: true
 tags:
     - Cryptography
     - Confidential Compute

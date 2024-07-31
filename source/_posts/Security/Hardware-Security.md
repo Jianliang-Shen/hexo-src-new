@@ -3,6 +3,7 @@ layout: post
 title: 硬件安全 - 从SoC设计到系统级防御
 date: 2024-03-29 22:25:4
 index_img: /img/post_pics/cc/hw_security_index.png
+archive: true
 tags:
     - Hardware
     - TEE

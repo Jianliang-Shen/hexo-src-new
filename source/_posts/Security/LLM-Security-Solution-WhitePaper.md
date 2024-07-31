@@ -3,6 +3,7 @@ layout: post
 title: "机密计算: 大模型安全解决方案"
 index_img: /img/post_pics/cc/llm-sec-1.jpg
 date: 2024-07-29 19:14:35
+archive: true
 tags:
     - LLM
     - TEE

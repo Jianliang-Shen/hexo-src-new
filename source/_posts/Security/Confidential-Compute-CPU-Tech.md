@@ -5,6 +5,7 @@ index_img: /img/post_pics/cc/hy-cc-index.png
 date: 2024-07-24 14:48:35
 sticky: 100
 math: true
+archive: true
 tags:
     - Cryptography
     - TEE
