@@ -92,7 +92,7 @@ npm install hexo-deployer-git --save
 ``` yml
 deploy:
   type: git
-  repository: git@github.com:sjl3110/sjl3110.github.io.git
+  repository: git@github.com:Jianliang-Shen/Jianliang-Shen.github.io.git
   branch: master
 
 ```
