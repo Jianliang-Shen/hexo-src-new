@@ -183,5 +183,5 @@ deploy:
     repository: 
       github:
         # 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@github.com:Jianliang-Shen/sjl3110.github.io.git
-        git@github.com:Jianliang-Shen/sjl3110.github.io.git
+        git@github.com:Jianliang-Shen/Jianliang-Shen.github.io.git
     branch: master
