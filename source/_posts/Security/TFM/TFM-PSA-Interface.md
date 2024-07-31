@@ -206,7 +206,7 @@ __asm 关键字用于调用内联汇编程序，并且可在 C 或 C++ 语句合
 ARM有两种模式，handler处理器模式和thread线程模式，前者能够访问更多的资源并始终处于特权模式下，SVC实现thread模式向handler模式的请求，请求通过imm立即数跳转。参考：[ cortex-M3 的SVC、PendSV异常，与操作系统(ucos实时系统)_@角色扮演#-CSDN博客](https://blog.csdn.net/guozhongwei1/article/details/49544671?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-3.control)
 
 In ARMv8-M document:
-![](/img/post_pics/TF-M/tfm_if.png)
+![](/img/TF-M/tfm_if.png)
 
 ## Supervisor calls
 

@@ -2,7 +2,7 @@
 layout: post
 title: GPU Note
 date: 2024-04-24 10:28:15
-index_img: /img/post_pics/gpu/gpu_note_index.png
+index_img: /img/gpu/gpu_note_index.png
 archive: true
 tags: 
     - Compute
@@ -823,7 +823,7 @@ Direct Rendering Manager 提供了一个抽象层，允许用户空间程序（�
 ### 管中窥"GPU ISA"
 
 LDS指令格式：
-![](/img/post_pics/gpu/LDS_ISA.png)
+![](/img/gpu/LDS_ISA.png)
 
 | Field Name |Bits |Format or Description|
 |----|----|----|

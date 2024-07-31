@@ -1,6 +1,6 @@
 ---
 title: Karpathy llm.c测试与代码分析
-index_img: /img/post_pics/gpu/gpt2.png
+index_img: /img/gpu/gpt2.png
 date: 2024-04-28 10:07:29
 tags:
     - Algorithm

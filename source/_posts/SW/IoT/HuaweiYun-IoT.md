@@ -1,7 +1,7 @@
 ---
 title: 华为云物联网设备接入及OBS使用
 date: 2020-06-16 14:01:17
-index_img: /img/post_pics/index_img/huaweiyun_index.png
+index_img: /img/index_img/huaweiyun_index.png
 tags: 
     - Linux
 categories: 
@@ -71,7 +71,7 @@ categories:
 ### Windows安装OBS Browser+
 
 在使用OBS前，首先申请一个捅，并在[查看密钥](https://console.huaweicloud.com/iam/?region=cn-east-3#/mine/accessKey)这里申请访问的AK和SK以便之后登陆使用。[下载](https://support.huaweicloud.com/browsertg-obs/obs_03_1003.html)安装，登陆时账号可以任意配置，填上AK和SK即可。
-![](/img/post_pics/huawei_yun/login.png)
+![](/img/huawei_yun/login.png)
 
 ### linux安装obsutil
 
@@ -158,7 +158,7 @@ go run obsutil                                                          # 生成
 ### 硬件连接
 
 红外摄像头：
-![](/img/post_pics/huawei_yun/hardware.jpg)
+![](/img/huawei_yun/hardware.jpg)
 更新Picamera驱动并使用下面文件测试：
 
 ```py
@@ -272,7 +272,7 @@ video:18178kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing
 ```
 
 实际测试延迟在15s-20s之间（4G热点网络）：  
-![](/img/post_pics/huawei_yun/html.PNG)
+![](/img/huawei_yun/html.PNG)
 
 参考：[【树莓派】ffmpeg + nginx 推 rtmp 视频流实现远程监控](https://blog.csdn.net/weixin_42534940/article/details/89302092)
 

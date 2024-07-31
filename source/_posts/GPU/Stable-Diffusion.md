@@ -2,7 +2,7 @@
 layout: post
 title: Stable Diffusion 安裝配置
 date: 2024-07-23 15:03:51
-index_img: /img/post_pics/stable/index.png
+index_img: /img/stable/index.png
 tags:
     - AI
     - GPU
@@ -34,13 +34,13 @@ For more details see [Install-and-Run-on-NVidia-GPUs](https://github.com/AUTOMAT
 
 将[简体中文翻译扩展](https://github.com/dtlnor/stable-diffusion-webui-localization-zh_CN)一个个安装后，得到下面的界面：
 
-![Lobe主题的界面](/img/post_pics/stable/lobe.png)
+![Lobe主题的界面](/img/stable/lobe.png)
 
 >注：有时候无法从github拉取插件，或者搜索安装，考虑手动安装。
 
 已安装插件一览：
 
-![插件一览](/img/post_pics/stable/lobe2.png)
+![插件一览](/img/stable/lobe2.png)
 
 ## issues
 

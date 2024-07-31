@@ -1,7 +1,7 @@
 ---
 title: AM5728配置DMM_LISA_MAP修改内存工作模式
 date: 2019-11-08 13:30:34
-index_img: /img/post_pics/index_img/am5728_index.png
+index_img: /img/index_img/am5728_index.png
 tags: 
     - Linux
     - Memory
@@ -39,11 +39,11 @@ categories:
   
 参考DMM_LISA_MAP_i的寄存器表格可以重置DDR的启动功能和映射大小。  
 
-![](/img/post_pics/ram/pic1.png)
+![](/img/ram/pic1.png)
   
 上图为寄存器的内容，SYS_SIZE为配置的内存总大小，SDRC_MAP为interleaving的配置方式，可选只使用EMIF1、只使用EMIF2、或者EMIF1和EMIF2交叉存取的方式，如果工作在非交叉存取的模式，SDRC_INTL不需要配置。  
   
-![](/img/post_pics/ram/pic2.png)
+![](/img/ram/pic2.png)
 
 ### U-BOOT配置寄存器
 
@@ -66,9 +66,9 @@ void emif_get_dmm_regs(const struct dmm_lisa_map_regs **dmm_lisa_regs)
 ```
 
 根据原设置使用寄存器3的内容0x8074 0300可以看出内存的配置如下：  
-![](/img/post_pics/ram/pic3.png)
+![](/img/ram/pic3.png)
 
 根据硬件配置，我们的内存设置如下：  
-![](/img/post_pics/ram/pic4.png)
+![](/img/ram/pic4.png)
 
 参考：[TI wiki](http://processors.wiki.ti.com/index.php?oldid=127545&title=EZSDK_Memory_Map&keyMatch=MEMORY%20MAP&tisearch=Search-CN-everything)  

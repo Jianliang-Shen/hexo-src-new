@@ -1,7 +1,7 @@
 ---
 title: VScode+Qemu调试TF-M
 date: 2023-08-10 10:59:20
-index_img: /img/post_pics/index_img/vscode_debug.png
+index_img: /img/index_img/vscode_debug.png
 tags:
     - TF-M
     - Vscode
@@ -68,13 +68,13 @@ Run **run-qemu-an521** to get the build log.
 1. Install the extension Cortex Debug in VScode.
 
 
-![](/img/post_pics/TF-M/vscode_debug1.png)
+![](/img/TF-M/vscode_debug1.png)
 
 
 2. Set launch.json file, in the left debug extension, you can see 'create a new launch.json file', then choose 'Cortex Debug'. Copy the below JSON configs to override it.
 
 
-![](/img/post_pics/TF-M/vscode_debug2.png)
+![](/img/TF-M/vscode_debug2.png)
 
 ```json
 {
@@ -111,4 +111,4 @@ Run **run-qemu-an521** to get the build log.
    6. **CALL STACK** shows the calling routine of functions.
 
 
-![](/img/post_pics/index_img/vscode_debug.png)
+![](/img/index_img/vscode_debug.png)

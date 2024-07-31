@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SDMA 3D 拷贝底层机理
-index_img: /img/post_pics/gpu/sdma/index.png
+index_img: /img/gpu/sdma/index.png
 date: 2024-05-17 20:00:44
 tags: 
     - DMA
@@ -24,9 +24,9 @@ GPU MEM3DCPY是怎么实现的。
 
 这个操作主要依靠 SDMA Linear Sub-Window Copy。该命令用于在两个具有不同大小和起始点(应该是相同元素大小)的表面之间执行子窗口复制。
 
-![](/img/post_pics/gpu/sdma/0.png)
-![](/img/post_pics/gpu/sdma/0-1.png)
-![](/img/post_pics/gpu/sdma/0-2.png)
+![](/img/gpu/sdma/0.png)
+![](/img/gpu/sdma/0-1.png)
+![](/img/gpu/sdma/0-2.png)
 
 其中主要涉及：
 
@@ -43,7 +43,7 @@ HIP/tests/src/runtimeApi/memory/hipMemset3D.cpp
 
 创建源，目标，存入hipMemcpy3D(&myparms)的参数myparms中，其中地址分别为 0x7ffff3700000 和 0x7ffff7f2f010
 
-![](/img/post_pics/gpu/sdma/1.png)
+![](/img/gpu/sdma/1.png)
 
 此参数结构体和内部重要参数结构体定义为
 
@@ -84,7 +84,7 @@ typedef struct hipPos {
 const HIP_MEMCPY3D desc = hip::getDrvMemcpy3DDesc(*p);
 ```
 
-![](/img/post_pics/gpu/sdma/2.png)
+![](/img/gpu/sdma/2.png)
 
 
 注意这是device到host的拷贝。
@@ -149,12 +149,12 @@ ihipGetMemcpyParam3DCommand 进一步决策方向：
 
 ihipMemcpyDtoHCommand → ihipMemcpyDtoHValidate
 
-![](/img/post_pics/gpu/sdma/3.png)
+![](/img/gpu/sdma/3.png)
 
 
 这里构造了待拷贝的rect：
 
-![](/img/post_pics/gpu/sdma/4.png)
+![](/img/gpu/sdma/4.png)
 
 这里创建了一个read memory 的command，并执行完 validatePeerMemory
 
@@ -293,7 +293,7 @@ void BlitSdma<RingIndexTy, HwIndexMonotonic, SizeToCountOffset, useGCR>::BuildCo
 - 注意：在填充包的时候，pitch, slice_picth，以及copy rect width都需要转换为pixel单位
 - 注意：picth和rect width大小不能小于一个像素的长度，例如element = 4，表示一个像素为连续16bytes，则最小跨度为16 bytes
 
-![](/img/post_pics/gpu/sdma/5.png)
+![](/img/gpu/sdma/5.png)
 
 对每个element测试，测试结果为：
 
@@ -357,4 +357,4 @@ void BlitSdma<RingIndexTy, HwIndexMonotonic, SizeToCountOffset, useGCR>::BuildCo
 
 打印数组如下，阴影部分为目标拷贝区域。
 
-![](/img/post_pics/gpu/sdma/6.png)
+![](/img/gpu/sdma/6.png)

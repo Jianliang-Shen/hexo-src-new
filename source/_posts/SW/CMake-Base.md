@@ -1,7 +1,7 @@
 ---
 title: CMake入门与进阶
 date: 2021-08-12 21:04:18
-index_img: /img/post_pics/index_img/cmake_index.png
+index_img: /img/index_img/cmake_index.png
 tags:
     - CMake
     - Tool

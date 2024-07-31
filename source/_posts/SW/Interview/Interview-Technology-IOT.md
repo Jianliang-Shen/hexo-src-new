@@ -1,7 +1,7 @@
 ---
 title: 嵌入式软件基础知识-C/C++
 date: 2020-6-25 19:13:09
-index_img: /img/post_pics/index_img/iot_index.jpg
+index_img: /img/index_img/iot_index.jpg
 tags: 
     - C/C++
     - Linux
@@ -86,9 +86,9 @@ categories:
   - 尾数部分（Mantissa）：尾数部分
 
 其中float的存储方式如下图所示:
-![](/img/post_pics/c/c_1.png)
+![](/img/c/c_1.png)
 而双精度的存储方式如下图:
-![](/img/post_pics/c/c_2.png)
+![](/img/c/c_2.png)
   
 
 
@@ -272,7 +272,7 @@ int main(void)
 #### C++的编译环境
 
 如下图所示，C++的编译环境由如下几部分构成：C++标准库、C语言兼容库、编译器扩展库及编译模块。
-![](/img/post_pics/c/c_3.png)
+![](/img/c/c_3.png)
 
 ```cpp
 #include<iostream>  //C++标准库，不带".h"
@@ -513,7 +513,7 @@ Linux 默认是 8M，不过可以调整。
 #### 请你回答一下 new/delete与 与 malloc/free 的区别
 
 首先，new/delete 是 C++的关键字，而 malloc/free 是 C语言的库函数，后者使用必须指明申请内存空间的大小，对于类类型的对象，后者不会调用构造函数和析构函数。
-![](/img/post_pics/c/c_6.png)
+![](/img/c/c_6.png)
 
 #### 请你说说你了解的RTTI
 

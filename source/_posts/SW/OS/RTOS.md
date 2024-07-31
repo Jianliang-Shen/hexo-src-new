@@ -1,7 +1,7 @@
 ---
 title: 实时操作系统分类、特点及实现原理
 date: 2020-09-02 11:27:52
-index_img: /img/post_pics/index_img/os_1.png
+index_img: /img/index_img/os_1.png
 tags: 
     - RTOS
 categories: 
@@ -192,7 +192,7 @@ NuttX是一个实时嵌入式操作系统（Embedded RTOS），第一个版本�
 * 免费、开放源码。完全可以免费用于商业产品，开放源码更便于学习操作系统原理、从全局掌握FreeRTOS运行机理、以及对操作系统进行深度裁剪以适应自己的硬件。
 * 2017年底，FreeRTOS作者加入亚马逊，担任首席工程师，FreeRTOS也由亚马逊管理。同时修改了用户许可证，FreeRTOS变得更加开放和自由。背靠亚马逊，相信未来FreeRTOS会更加稳定可靠。此外，以前价格不菲的《实时内核指南》和《参考手册》也免费开放下载，这使得学习更加容易。学习的资料来源主要是FreeRTOS的[官方网站](www.freertos.org)和源代码。FreeRTOS的创始人RichardBarry编写了大量的移植代码和配套文档，我只不过是沿着Richard Barry铺好的路前进，所以，这没什么困难的。
   
-![](/img/post_pics/os/freeRtos.png)
+![](/img/os/freeRtos.png)
 
 
 ### 任务管理
@@ -242,7 +242,7 @@ portBASE_TYPE xTaskCreate(  pdTASK_CODE pvTaskCode,                //函数名�
 初始优先级运行后可以通过 vTaskPrioritySet() API 函数进行修改，优先级数目可以自定义，为常量configMAX_PRIORITIES的值。范围0~configMAX_PRIORITIES-1。如果一个任务持续运行，且优先级较高，其他任务将”饿死“。
 #### 扩充非运行态
 解决低优先级饿死问题。增加阻塞态，由事件进行驱动。增加挂起状态，调用vTaskSuspend()挂起，vTaskResume()唤醒。新增就绪状态。任务状态机如下所示：
-![](/img/post_pics/os/vTask.jpg)
+![](/img/os/vTask.jpg)
 #### 空闲任务与空闲任务钩子函数
 调用调度器时，自动创建了一个空闲任务，优先级为0，总是在运行。通过钩子函数（回调）可以在空闲任务中添加应用程序。注意函数不能阻塞或者挂起。钩子函数固定格式为vApplicationIdleHook()。
 #### 任务优先级
@@ -318,7 +318,7 @@ int main( void )
 xQueueSendToFrontFromISR()，xQueueSendToBackFromISR()与xQueueReceiveFromISR()分别是xQueueSendToFront()，xQueueSendToBack()与xQueueReceive()的中断安全版本，专门用于中断服务例程中。可以使用队列在中断和任务之间进行传递数据和事件通信。
 #### 中断嵌套
 嵌套的含义本质是低优先级中断被更高中断优先级的中断抢断。注意软件优先级与硬件中断优先级无关。
-![](/img/post_pics/os/isr.PNG)
+![](/img/os/isr.PNG)
 
 ### 资源管理
 临界资源保护问题。具体包括以下情形：

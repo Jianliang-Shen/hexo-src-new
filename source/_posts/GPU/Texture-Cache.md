@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 纹理缓存
-index_img: /img/post_pics/gpu/tc_index.png
+index_img: /img/gpu/tc_index.png
 date: 2024-04-26 10:28:15
 tags: 
     - Cache
@@ -16,7 +16,7 @@ categories:
 
 纹理缓存对GPU来说是**Read-Only**的。主要在**texture-mapping**阶段由GPU程序读取。纹理缓存有很高的命中率，因为相邻像素之间有大量的重用，而且通常位于**着色器处理器**附近，所以**纹理数据具有高吞吐量和低读延迟**。GPU的架构对程序员是不可见的，特备隐藏在API之下，这些架构包括纹理缓存被频繁的更新，基础的架构如图所示，L1和L2共同构成了GPU的分级内存：
 
-![](/img/post_pics/gpu/tc.png)
+![](/img/gpu/tc.png)
 关于上图的描述：紫色的部分是**Texture Cache**。 从最上边开始看，**Thread Scheduler**为不同的图形处理阶段收集任务。然后把任务安排到不同的**Graphic Core**上。**Graphic Core**有一些固定功能的图像逻辑（**Geometr，Raster**），包括了几个处理功能和光栅化功能。 接着是**Shader**，包括了逻辑控制和ALU单元阵列，用于以SIMD的方式处理shader程序。Shader执行阶段使用了L1 数据指令**Cache**、**texture mapping**和与其关联的**L1 Texture Cache**。Shader的输出和L1和L2之间需要通过**crossbar**来传输。 **Crossbar**连接了各种内存单元，包括**L2Cache**、ROP和内存控制器。内存控制器链接在了保存了**framebuffer**的外部内存上。大部分相邻的blocks是彼此链接的。
 
 为了理解对纹理缓存的需求，我们首先要了解影响纹理缓存的功能：**texture mapping**和**rasterization**.
@@ -27,12 +27,12 @@ categories:
 
 通过整数坐标来查找单个颜色叫做**nearestfiltering**，并且可能产生走样。为了避免走样，通常使用邻域像素进行滤波，常用的滤波是**bilinear**。这个平滑操作可以解决纹理映射时产生的走样，但是无法解决纹理缩小时产生走样。
 
-![](/img/post_pics/gpu/tc2.png)
+![](/img/gpu/tc2.png)
 
 
 解决纹理所缩小的走样问题需要时用**mipmap**技术。**Mipmap**预先滤波是将纹理贴图生成一系列分辨率减半的贴图，构成一个图像金字塔。**Trilinear mipmap**是通过搜索金字塔相邻两层的贴图，然后在每个贴图上进行**bilinear**插值之后再用这两个值进行线性插值，最终会得到**Trilinear**滤波结果。下图可以看到在level0和level1上选择的`2*2`的像素进行**bilinear**滤波。为了选择这两张贴图，需要计算lod值。lod值的计算需要计算相邻`2*2`像素的所对应的纹理坐标的偏差。
 
-![](/img/post_pics/gpu/tc3.png)
+![](/img/gpu/tc3.png)
 
 ## Rasterization
 

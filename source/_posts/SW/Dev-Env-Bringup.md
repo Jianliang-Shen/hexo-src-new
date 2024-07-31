@@ -219,7 +219,7 @@ security = user
 
 打开windows文件管理器右键，添加一个网络位置 `\\<ip>\public`认证即可。
 
-![](/img/post_pics/samba.png)
+![](/img/os/samba.png)
 
 ## 配置Vim
 

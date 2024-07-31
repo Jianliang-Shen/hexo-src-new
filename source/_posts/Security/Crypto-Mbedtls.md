@@ -1,7 +1,7 @@
 ---
 title: 密码学介绍和Mbedtls相关实现
 date: 2024-01-20 13:49:37
-index_img: /img/post_pics/mbedtls/mbedtls_index.png
+index_img: /img/mbedtls/mbedtls_index.png
 math: true
 tags:
     - Cryptography
@@ -67,18 +67,18 @@ Alice和Bob持有相同的共享秘钥，通过秘钥加解密数据。对称加
 #### ECB Electric Codebook
 
 电子密码本模式，明文与密文一一对应，有明显缺陷。
-![](/img/post_pics/mbedtls/2.png)
+![](/img/mbedtls/2.png)
 
 #### CBC Cipher Block Chaining
 
 密码分组链接模式，每一组明文在加密前都与前面的密文分组进行**异或**操作。与第一个分组进行异或的“密文分组”称为初始化向量IV。初始化向量一般由伪随机数生成器派生，IV不可泄露。CBC模式无法抵御选择密文攻击，当密文遭到破坏时，后面的内容无法解密。
 
-![](/img/post_pics/mbedtls/3.png)
+![](/img/mbedtls/3.png)
 
 #### CTR
 
 计数器模式，将累加的计数器与秘钥生成秘钥流，再进行异或。计数器值与分组长度相同，最后一个分组长度不满则截取有效部分。
-![](/img/post_pics/mbedtls/4.png)
+![](/img/mbedtls/4.png)
 
 CTR的优势：
 
@@ -89,10 +89,10 @@ CTR的优势：
 ### AES
 
 AES是一个对称分组加密算法，分组大小为128bit，密钥长度为128（轮数10）、192（轮数12）、256（轮数14）位。
-![](/img/post_pics/mbedtls/5.png)
+![](/img/mbedtls/5.png)
 
 AES加密过程，
-![](/img/post_pics/mbedtls/6.png)
+![](/img/mbedtls/6.png)
 
 #### AES计算过程
 
@@ -714,7 +714,7 @@ MAC，Message Authentication Code，帮助接收者判断消息是否被第三�
 
 ### 消息认证码
 
-![](/img/post_pics/mbedtls/7.png)
+![](/img/mbedtls/7.png)
 
 ### 实现形式
 
@@ -723,11 +723,11 @@ MAC，Message Authentication Code，帮助接收者判断消息是否被第三�
 - CBC-MAC和CMAC
 - 认证加密CCM，输入包括明文、一次性整数Nonce、相关数据A和密钥K，输出密文C和认证码T，使用的算法是CBC-MAC
   
-![](/img/post_pics/mbedtls/8.png)
+![](/img/mbedtls/8.png)
 
 - 认证加密GCM：输入包括明文、初始化向量IV、相关数据A和密钥K，输出密文C和认证码T，使用的算法是CBC-MAC
   
-![](/img/post_pics/mbedtls/9.png)
+![](/img/mbedtls/9.png)
 
 ### HMAC示例
 
@@ -824,7 +824,7 @@ int main(void)
 ```
 
 运行结果：
-![](/img/post_pics/mbedtls/10.png)
+![](/img/mbedtls/10.png)
 
 ## 9 数字签名
 
@@ -966,7 +966,7 @@ gen_random_havege file # 使用硬件时钟源生成伪随机数，依赖MBEDTLS
 
 ### CTR_DRBG
 
-![fig1](/img/post_pics/mbedtls/1.png)
+![fig1](/img/mbedtls/1.png)
 攻击时，由于无法破解明文获取内部状态，得到计数值，因此无法预测下一个随机数。
 
 ## PGP
@@ -1926,7 +1926,7 @@ static int spm_client_decrypt_data(psa_msg_t *msg)
 
 亚博智能开发板，使用的编译工具和sdk为riscv64-unknown-elf-gcc和kendryte-standalone-sdk-develop，开发环境为windows。
 
-![](/img/post_pics/index_img/mbed.png)
+![](/img/index_img/mbed.png)
 
 #### 移植过程简述
 
@@ -2127,8 +2127,8 @@ cmake .. -DPROJ=test_mbedtls -G "MinGW Makefiles"
 ```
 
 将编译好的文件烧入开发板中
-![](/img/post_pics/mbedtls/11.png)
+![](/img/mbedtls/11.png)
 
 上电运行：
-![](/img/post_pics/mbedtls/12.png)
+![](/img/mbedtls/12.png)
 demo运行成功。

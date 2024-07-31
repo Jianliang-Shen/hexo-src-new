@@ -1,7 +1,7 @@
 ---
 title: STM32 RT-Thread OS实战
 date: 2020-09-05 15:54:45
-index_img: /img/post_pics/index_img/rtthread.png
+index_img: /img/index_img/rtthread.png
 tags: 
     - RTOS
 categories: 
@@ -173,7 +173,7 @@ static int uart_sample(int argc, char *argv[])
 MSH_CMD_EXPORT(uart_sample, uart device sample);
 ```
 该文件中，最后一句完成看自定义命令的添加。完成以上配置后，下载后打开串口输入命令查看结果：
-![](/img/post_pics/os/gps.PNG)
+![](/img/os/gps.PNG)
 
 
 ### 管脚中断

@@ -1,7 +1,7 @@
 ---
 title: STM32 Free RTOS实战
 date: 2020-09-03 09:10:27
-index_img: /img/post_pics/index_img/freertos.png
+index_img: /img/index_img/freertos.png
 tags: 
     - RTOS
 categories: 
@@ -174,7 +174,7 @@ int main ( void )
 }
 ```
 输出结果：
-![](/img/post_pics/os/queue.PNG)
+![](/img/os/queue.PNG)
 
 ## 二值信号量--同步数据读写
 ```c

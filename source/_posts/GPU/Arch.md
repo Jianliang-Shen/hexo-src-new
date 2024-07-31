@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GPU Architecture
-index_img: /img/post_pics/gpu/arch/gpu_index.png
+index_img: /img/gpu/arch/gpu_index.png
 date: 2024-07-17 09:57:13
 tags:
     - Arch
@@ -52,20 +52,20 @@ NV GPU架构介绍和演化过程。
 
 GPU中实际有多少这些单元（每个GPC有多少个SM，多少个GPC …）取决于芯片配置本身。例如，GM204有4个GPC，每个GPC有4个SM，但Tegra X1有1个GPC和2个SM，它们均采用Maxwell设计。SM设计本身（内核数量，指令单位，调度程序…）也随着时间的推移而发生变化，并帮助使芯片变得如此高效，可以从高端台式机扩展到笔记本电脑移动。
 
-![](/img/post_pics/gpu/arch/1.png)
+![](/img/gpu/arch/1.png)
 
 ### 内存架构
 
 部分架构的GPU与CPU类似，也有多级缓存结构：寄存器、L1缓存、L2缓存、GPU显存、系统显存。但是GPU-style的内存架构ALU定夺，GPU上下文（Context）多，吞吐量高，依赖高带宽与系统内存交换数据。
 
-![](/img/post_pics/gpu/arch/2.png)
+![](/img/gpu/arch/2.png)
 
 内存（Memory）是显卡用于存储数据和代码的部分，它可以快速访问大量数据，大大提高了显卡的运算速度。当前英伟达显卡的内存主要分为两种：GDDR5和GDDR6。GDDR5内存具有高带宽、低延迟和低功耗等特点，通常用于较低端的显卡；而GDDR6内存则具有更高的带宽、更低的延迟和更高的功耗，适用于高端游戏等需要更高性能的应用。
 
 显存（Video Memory）是显卡专门用来存储图形数据的部分，它比普通内存更快速，可以更好地支持图形运算。英伟达显卡的显存一般分为两种：GDDR5和GDDR6。GDDR5显存通常用于中低端显卡，而GDDR6显存则主要适用于高端的游戏和图形应用。
 
 ### Streaming Multiprocessor(SM)
-![](/img/post_pics/gpu/arch/3.png)
+![](/img/gpu/arch/3.png)
 
 上图为一个SM的构成图，从上到下依次是：
 
@@ -86,7 +86,7 @@ GPU中实际有多少这些单元（每个GPC有多少个SM，多少个GPC …�
 
 CUDA 全称为统一计算设备架构 (Compute Unified Device Architecture) ，是一个并行计算平台，同时也是一个应用程序编程接口 (API)。目的在于让软件开发人员能够更好地控制他们可以使用的物理资源。使用 C 或 C++ 编码的计算机程序员对资源分配有很大的控制权。CUDA 系统极大地促进了 OpenACC 和 OpenCL 等框架的普及和使用。CUDA 核心也是并行处理器，允许不同处理器同时处理数据。这与双核或四核 CPU 类似，只不过 GPU 有数千个 CUDA 核心。
 
-![](/img/post_pics/gpu/arch/4.png)
+![](/img/gpu/arch/4.png)
 
 包括控制单元Dispatch Port、Operand Collector，以及浮点计算单元FP Unit、整数计算单元Int Unit，另外还包括计算结果队列。当然还有Compare、Logic、Branch等。相当于微型CPU。
 
@@ -124,7 +124,7 @@ CUDA Core 专门处理图形工作负载，Tensor Core 更擅长处理数字工�
 
 根据CPU和GPU是否共享内存，可分为两种类型的CPU-GPU架构：
 
-![](/img/post_pics/gpu/arch/5.png)
+![](/img/gpu/arch/5.png)
 
 上图左是分离式架构，CPU和GPU各自有独立的缓存和内存，它们通过PCI-e等总线通讯。这种结构的缺点在于 PCI-e 相对于两者具有低带宽和高延迟，数据的传输成了其中的性能瓶颈。目前使用非常广泛，如PC、智能手机等。
 
@@ -136,7 +136,7 @@ CUDA Core 专门处理图形工作负载，Tensor Core 更擅长处理数字工�
 
 下图是分离式架构的资源管理模型：
 
-![](/img/post_pics/gpu/arch/6.png)
+![](/img/gpu/arch/6.png)
 
 #### MMIO（Memory Mapped IO）
 
@@ -193,7 +193,7 @@ CUDA Core 专门处理图形工作负载，Tensor Core 更擅长处理数字工�
 
 ## GPU架构演进
 
-![](/img/post_pics/gpu/arch/7.png)
+![](/img/gpu/arch/7.png)
 
 ### G80 架构
 
@@ -213,7 +213,7 @@ GPU 通过 Host Interface 读取 CPU 指令，GigaThread Engine 将特定的数�
 - Thread Block: 一个 Thread Block 包含多个线程（比如几百个），多个 Blocks 之间的执行完全独立，硬件可以任意调度多个 Block 间的执行顺序，而 Block 内部的多个线程执行规则由程序员决定，程同时程序员可以决定一共有多少个 Blocks；
 - Thread Warp: 32 个线程为一个 Thread Warp，Warp 的调度有特殊规则
 
-![](/img/post_pics/gpu/arch/8.png)
+![](/img/gpu/arch/8.png)
 
 SM 内有 32 个 CUDA Cores，每个 CUDA Core 含有一个 Integer arithmetic logic unit (ALU)和一个 Floating point unit(FPU). 并且提供了对于单精度和双精度浮点数的 FMA 指令。
 
@@ -221,11 +221,11 @@ SM 内还有 16 个 LD/ST 单元，也就是 Load/Store 单元，支持 16 个�
 
 4 个 SFU，是指 Special Function Unit，用于计算 sin/cos 这类特殊指令。每个 SFU 每个时钟周期只能一个线程执行一条指令。而一个 Warp(32 线程)就需要执行 8 个时钟周期。SFU 的流水线是从 Dispatch Unit 解耦的，所以当 SFU 被占用时，Dispatch Unit 会去使用其他的执行单元。
 
-![](/img/post_pics/gpu/arch/9.png)
+![](/img/gpu/arch/9.png)
 
 之前一直提到 Warp，但之前只说明了是 32 个线程，我们在这里终于开始详细说明，首先来看 Dual Warp Scheduler 的概览。
 
-![](/img/post_pics/gpu/arch/10.png)
+![](/img/gpu/arch/10.png)
 
 在之前的 SM 概览图以及上图里，可以注意到 SM 内有两个 Warp Scheduler 和两个 Dispatch Unit. 这意味着，同一时刻，会并发运行两个 warp，每个 warp 会被分发到一个 Cuda Core Group(16 个 CUDA Core), 或者 16 个 load/store 单元，或者 4 个 SFU 上去真正执行，且每次分发只执行 一条 指令，而 Warp Scheduler 维护了多个（比如几十个）的 Warp 状态。
 
@@ -233,7 +233,7 @@ SM 内还有 16 个 LD/ST 单元，也就是 Load/Store 单元，支持 16 个�
 
 但是众所周知，不同线程可能会进入不同的分支，这时如何执行一样的指令？
 
-![](/img/post_pics/gpu/arch/11.png)
+![](/img/gpu/arch/11.png)
 
 可以看上图，当发生分支时，只会执行进入该分支的线程，如果进入该分支的线程少，则会发生资源浪费。
 
@@ -243,7 +243,7 @@ SM 内还有 16 个 LD/ST 单元，也就是 Load/Store 单元，支持 16 个�
 
 [2014 Maxwell架构白皮书](https://developer.nvidia.com/maxwell-compute-architecture)
 
-![](/img/post_pics/gpu/arch/12.png)
+![](/img/gpu/arch/12.png)
 
 Maxwell的 SM 开始做减法了，每个 SM（SMM）中包含：
 
@@ -259,7 +259,7 @@ Maxwell的 SM 开始做减法了，每个 SM（SMM）中包含：
 
 ### Tesla架构
 
-![](/img/post_pics/gpu/arch/13.png)
+![](/img/gpu/arch/13.png)
 
 Tesla微观架构总览图如上。下面将阐述它的特性和概念：
 
@@ -303,7 +303,7 @@ Tesla微观架构总览图如上。下面将阐述它的特性和概念：
 
 [白皮书](/pdf/nv-gpu/volta-architecture-whitepaper.pdf)
 
-![](/img/post_pics/gpu/arch/14.png)
+![](/img/gpu/arch/14.png)
 
 
 2017年。采用了全新的设计理念和技术，拥有 256 个 SM 和 32 个 PolyMorph Engine 阵列，每个 SM 都拥有 64 个 CUDA 核心。该架构采用了全新的 Tensor 张量核心、ResNet 和 InceptionV3 加速模块等技术，搭配 GDDR6X 显存。这个架构可以说是完全以 Deep Learning 为核心了，相比 Pascal 也是一个大版本。
@@ -316,7 +316,7 @@ Tesla微观架构总览图如上。下面将阐述它的特性和概念：
 
 [白皮书](/pdf/nv-gpu/NVIDIA-Turing-Architecture-Whitepaper.pdf)
 
-![](/img/post_pics/gpu/arch/15.png)
+![](/img/gpu/arch/15.png)
 
 每个GPC均包含一个专用的光栅化引擎和6个TPC，且每个TPC均包含两个SM。每个SM包含：
 
@@ -328,7 +328,7 @@ Tesla微观架构总览图如上。下面将阐述它的特性和概念：
 
 Turing架构采用全新SM设计，每个TPC均包含两个SM，每个SM共有64个FP32核心和64个INT32核心。Turing SM支持并行执行FP32与INT32运算，每个Turing SM还拥有8个混合精度Turing Tensor核心和1个RT核心。
 
-![](/img/post_pics/gpu/arch/16.png)
+![](/img/gpu/arch/16.png)
 
 ### Ampere 架构
 
@@ -336,7 +336,7 @@ Turing架构采用全新SM设计，每个TPC均包含两个SM，每个SM共有64
 
 代表产品为 GeForce RTX 30 系列。该架构继续优化并行计算能力，并引入了更先进的 GDDR6X 内存技术，大幅提高了内存带宽和性能。相比 Turing 架构，Ampere 架构中的 SM 在 Turing 基础上增加了一倍的 FP32 运算单元，这使得每个 SM 的 FP32 运算单元数量提高了一倍，同时吞吐量也就变为了一倍。此外，安培架构还改进了着色器性能和张量核（Tensor Cores），进一步加速深度学习和人工智能任务的处理速度。
 
-![](/img/post_pics/gpu/arch/17.png)
+![](/img/gpu/arch/17.png)
 
 NVIDIA Ampere GA100 GPU架构满配如下：
 
@@ -362,13 +362,13 @@ NVIDIA A100基于7nm Ampere GA100 GPU，具有6912 CUDA内核和432 Tensor Core�
 
 [Hopper架构](https://www.nvidia.cn/data-center/technologies/hopper-architecture/)
 
-![](/img/post_pics/gpu/arch/18.png)
+![](/img/gpu/arch/18.png)
 
 [H100 中文白皮书](/pdf/nv-gpu/NVIDIA-H100-GPU-Architecture-Whitepaper-zhCN.pdf)
 
 作为面向专业计算的GPU，H100采用HBM3高带宽显存，NVIDIA将六颗HBM3高带宽显存堆栈在核心两侧。核心内建5120-bit的HBM3显存位宽，英伟达可配置最高80GB显存，SXM5版（HBM3显存）带宽更是达到3TB/s，PCIe版本（HBM2e）则是2TB/s。
 
-![](/img/post_pics/gpu/arch/19.png)
+![](/img/gpu/arch/19.png)
 
 H100的主机接口同样迎来升级，SXM外形的PCB板配备新一代NVLink，拥有900GB/s的带宽。面对AIC插卡版本采用PCIe 5.0 x16(拥有128GB/s)接口，两者均引入了资源池(resource-pooling)功能，加速GPU之间的数据交换。
 

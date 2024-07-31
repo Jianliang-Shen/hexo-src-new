@@ -1,7 +1,7 @@
 ---
 title: Windows系统配置Linux子系统开发ARM
 date: 2019-07-11 16:42:17
-index_img: /img/post_pics/index_img/wsl_ubuntu.JPG
+index_img: /img/index_img/wsl_ubuntu.JPG
 tags: 
     - Arm
     - Linux
@@ -17,7 +17,7 @@ Win10可以支持Ubuntu子系统，再也不需要虚拟机!
 
 系统要求：最新版win10，打开应用商店安装Ubuntu应用软件，需要系统开启虚拟机功能以及LINUX子系统功能。 
 安装完成后如下：  
-![](/img/post_pics/index_img/wsl_ubuntu.JPG)
+![](/img/index_img/wsl_ubuntu.JPG)
 <!-- more -->
 ### 配置 Ubuntu
 

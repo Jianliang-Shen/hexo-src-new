@@ -1,14 +1,14 @@
 ---
 title: Cmder美化WSL Ubuntu
 date: 2019-08-10 14:06:52
-index_img: /img/post_pics/index_img/cmder_wsl_ubuntu.JPG
+index_img: /img/index_img/cmder_wsl_ubuntu.JPG
 tags:
     - Linux
 categories: 
     - OS
 ---
 WSL Ubuntu的界面比较简陋，推荐使用cmder改良一下终端。  
-![](/img/post_pics/index_img/cmder_wsl_ubuntu.JPG)
+![](/img/index_img/cmder_wsl_ubuntu.JPG)
 
 <!-- more -->  
 

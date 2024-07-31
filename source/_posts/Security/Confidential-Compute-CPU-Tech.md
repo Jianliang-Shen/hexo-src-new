@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "机密计算: 可信与国密算法"
-index_img: /img/post_pics/cc/hy-cc-index.png
+index_img: /img/cc/hy-cc-index.png
 date: 2024-07-24 14:48:35
 sticky: 100
 math: true
@@ -36,7 +36,7 @@ categories:
 - **公钥证书**：里面含有名字、组织、邮箱地址等基本信息，以及属于此人的公钥，由认证机构 (Certification Authority, Certifying Authority, CA) 施加数字签名
 - **认证机构**：由国际性组织和政府所设立的组织，也有通过提供认证服务来盈利的一般企业，此外个人也可以成立认证机构
 
-![获取合法的公钥](/img/post_pics/cc/hy-cc-1.png)
+![获取合法的公钥](/img/cc/hy-cc-1.png)
 
 # 可信根
 
@@ -54,7 +54,7 @@ categories:
 
 任何一步验签失败，都会使得系统无法启动。
 
-![系统安全启动验签流程](/img/post_pics/cc/hy-cc-2.png)
+![系统安全启动验签流程](/img/cc/hy-cc-2.png)
 
 ## 片外固件结构
 
@@ -65,7 +65,7 @@ categories:
 3. 使用加密参数加密 Body
 4. 拼接 Header + Enc_Body + Signature
 
-![片外固件结构](/img/post_pics/cc/hy-cc-3.png)
+![片外固件结构](/img/cc/hy-cc-3.png)
 
 解密+验签（Boot阶段由安全管理芯片完成）：
 
@@ -76,7 +76,7 @@ categories:
 
 ## 可信度量
 
-![静态度量](/img/post_pics/cc/hy-cc-4.png)
+![静态度量](/img/cc/hy-cc-4.png)
 
 - 逐级检查代码的完整性，度量的结果放在PCR(Platform Configurate Register)寄存器中；
 - 核心度量根 CRTM，就是 ROM 代码；
@@ -95,7 +95,7 @@ categories:
 
 Windows 运行 certmgr 命令可以查看证书：
 
-![查看证书](/img/post_pics/cc/hy-cc-5.png)
+![查看证书](/img/cc/hy-cc-5.png)
 
 # 可信存储
 
@@ -288,7 +288,7 @@ The decrypted result is: 'Hello World'
 - `dh_genprime.c`，产生DH共享参数，保存在dh_prime.txt
 - `rsa_genkey.c`，产生RSA密钥对，保存在rsa_priv.txt、rsa_pub.txt
 
-![服务器和客户端通过DH密钥协商获得共享密钥](/img/post_pics/cc/hy-cc-6.png)
+![服务器和客户端通过DH密钥协商获得共享密钥](/img/cc/hy-cc-6.png)
 
 {% fold info @DH密钥交换 %}
 

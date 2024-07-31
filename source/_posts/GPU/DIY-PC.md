@@ -2,7 +2,7 @@
 layout: post
 title: 装机记录
 date: 2024-06-20 10:39:27
-index_img: /img/post_pics/pc/all.jpg
+index_img: /img/pc/all.jpg
 tags:
     - GPU
     - AI
@@ -15,9 +15,9 @@ categories:
 <!-- more -->
 
 {% gi 3 1-2 %}
-  ![点亮](/img/post_pics/pc/all.jpg)
-  ![支架](/img/post_pics/pc/zhijia.jpg)
-  ![内存灯](/img/post_pics/pc/light.jpg)
+  ![点亮](/img/pc/all.jpg)
+  ![支架](/img/pc/zhijia.jpg)
+  ![内存灯](/img/pc/light.jpg)
 {% endgi %}
 
 # 清单
@@ -39,11 +39,11 @@ categories:
 | U 盘   | 爱国者 16 GB                                            | ￥19   |
 
 {% gi 5 1-3-1 %}
-  ![全家福](/img/post_pics/pc/total.jpg)
-  ![内存条](/img/post_pics/pc/mem.jpg)
-  ![固态](/img/post_pics/pc/ssd.jpg)
-  ![板U](/img/post_pics/pc/board.jpg)
-  ![丐卡](/img/post_pics/pc/gpu.jpg)
+  ![全家福](/img/pc/total.jpg)
+  ![内存条](/img/pc/mem.jpg)
+  ![固态](/img/pc/ssd.jpg)
+  ![板U](/img/pc/board.jpg)
+  ![丐卡](/img/pc/gpu.jpg)
 {% endgi %}
 
 # 过程
@@ -65,9 +65,9 @@ categories:
 
 
 {% gi 5 1-3-1 %}
-  ![开关线](/img/post_pics/pc/pwr.jpg)
-  ![风扇理线](/img/post_pics/pc/fans.jpg)
-  ![理线](/img/post_pics/pc/lines.jpg)
+  ![开关线](/img/pc/pwr.jpg)
+  ![风扇理线](/img/pc/fans.jpg)
+  ![理线](/img/pc/lines.jpg)
 
 {% endgi %}
 

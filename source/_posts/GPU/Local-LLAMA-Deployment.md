@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Llama 本地化部署
-index_img: /img/post_pics/ai/llama1-logo.png
+index_img: /img/ai/llama1-logo.png
 date: 2024-07-23 16:10:26
 sticky: 110
 tags:
@@ -64,7 +64,7 @@ $FIRST_INSTRUCTION [/INST]"
 GPU版本需要用`-ngl 40`参数指定（必须编译CUDA版本）。
 {% endnote %}
 
-![LLAMA](/img/post_pics/ai/llama_gpu.png)
+![LLAMA](/img/ai/llama_gpu.png)
 
 ## server 设置
 
@@ -95,7 +95,7 @@ echo
 ./server_curl_example.sh '请列举5条文明乘车的建议'
 ```
 
-![LLAMA Server](/img/post_pics/ai/llama_server.png)
+![LLAMA Server](/img/ai/llama_server.png)
 
 {% fold @运行后返回一个json条目 %}
 
@@ -184,7 +184,7 @@ make GGML_CUDA=1 -j 4
 
 其他配置同上
 
-![Jetson 运行 Llama](/img/post_pics/ai/llama_jetson.png)
+![Jetson 运行 Llama](/img/ai/llama_jetson.png)
 
 {% note primary %}
 第一次执行导入模型会很慢，之后会变快很多。图右边为`jtop`指令显示GPU占用情况。
@@ -192,7 +192,7 @@ make GGML_CUDA=1 -j 4
 
 测试长上下文 `7B q_2k`: [chinese-alpaca-2-7b-64k-gguf](https://huggingface.co/hfl/chinese-alpaca-2-7b-64k-gguf/tree/main), 显著提高了显存占用率。
 
-![Jetson 运行 Llama 7B](/img/post_pics/ai/llama_jetson2.png)
+![Jetson 运行 Llama 7B](/img/ai/llama_jetson2.png)
 
 ## ollama 部署
 
@@ -216,7 +216,7 @@ removing any unused layers
 success
 ```
 
-![Ollama](/img/post_pics/ai/ollama.png)
+![Ollama](/img/ai/ollama.png)
 
 实测是自动运行了GPU加速的。
 
@@ -239,7 +239,7 @@ PARAMETER stop <|end_header_id|>
 PARAMETER stop <|eot_id|>
 ```
 
-![Ollama](/img/post_pics/ai/ollama_zh.png)
+![Ollama](/img/ai/ollama_zh.png)
 
 ## 模型下载
 
@@ -360,7 +360,7 @@ $ ollama run llama3-zh-inst
 
 训练示意图：
 
-![Llama train](/img/post_pics/ai/llama_train_inst.png)
+![Llama train](/img/ai/llama_train_inst.png)
 
 报错：显存不足（TODO: 待解决）
 

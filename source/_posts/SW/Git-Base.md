@@ -1,7 +1,7 @@
 ---
 title: git工具使用指北
 date: 2021-03-31 21:40:59
-index_img: /img/post_pics/os/git.png
+index_img: /img/os/git.png
 tags:
     - Git
     - Tool

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 科技杂谈
-index_img: /img/post_pics/index_img/tech.png
+index_img: /img/index_img/tech.png
 date: 2024-07-31 22:26:04
 tags:
     - LLM

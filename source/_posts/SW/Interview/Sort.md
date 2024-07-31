@@ -1,7 +1,7 @@
 ---
 title: 排序算法
 date: 2024-01-19 16:22:43
-index_img: /img/post_pics/sort/quick-sort.gif
+index_img: /img/sort/quick-sort.gif
 tags: 
     - C/C++
     - Algorithm
@@ -29,7 +29,7 @@ categories:
 <!-- more -->
 ## 冒泡排序
 
-![](/img/post_pics/sort/bubble-sort.gif)
+![](/img/sort/bubble-sort.gif)
 
 两两比较相邻结果，按要求的顺序互换位置。每次循环都使得极值移动到最后
 
@@ -49,7 +49,7 @@ categories:
 
 ## 简单选择排序
 
-![](/img/post_pics/sort/selection-sort.gif)
+![](/img/sort/selection-sort.gif)
 
 通过n-i次比较，找到m-i+1中的关键字最小的记录，并和第i个记录交换。复杂度O(N^2)。
 
@@ -83,7 +83,7 @@ categories:
 
 ## 直接插入排序
 
-![](/img/post_pics/sort/insertion-sort.gif)
+![](/img/sort/insertion-sort.gif)
 
 将一个记录插入到一个已经排好序的有序表中，从而得到一个新的、记录数增1的有序表。复杂度O(N^2)。
 
@@ -158,7 +158,7 @@ k[i] >= k[2i+1]
 
 ### 堆排序原理
 
-![](/img/post_pics/sort/heap-sort.gif)
+![](/img/sort/heap-sort.gif)
 
 堆排序要解决两个问题：
 
@@ -463,7 +463,7 @@ int main(int argc, char **argv)
 
 ## 快速排序
 
-![](/img/post_pics/sort/quick-sort.gif)
+![](/img/sort/quick-sort.gif)
 
 ```cpp
 #include <iostream>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "龙蜥社区: 云原生机密计算最佳实践"
-index_img: /img/post_pics/openanolis/index.png
+index_img: /img/openanolis/index.png
 date: 2024-07-29 14:37:13
 tags:
     - TEE
@@ -182,7 +182,7 @@ Intel Trust Domain Extension(TDX) 基于虚拟化扩展机密计算的隔离能�
 
 CSV 是海光自主研发的安全虚拟化技术，采用国密算法实现，CSV 虚拟机在写内存数据时 CPU 硬件自动加密，读内存数据时硬件自动解密，每个 CSV 虚拟机使用不同的密钥。海光 CPU 内部使用 ASID（AddressSpaceID）区分不同的 CSV 虚拟机和主机，每个 CSV 虚拟机使用独立的 Cache、TLB 等 CPU 资源，实现 CSV 虚拟机、主机之间的资源隔离。CSV 虚拟机使用隔离的硬件资源，支持启动度量、远程认证等功能，是安全的硬件可信执行环境。
 
-![海光CSV](/img/post_pics/openanolis/hygon_csv.png)
+![海光CSV](/img/openanolis/hygon_csv.png)
 
 CSV机密容器技术将安全虚拟化技术与Kata容器技术结合，实现容器运行环境的度量和加密，容器中的程序可以使用远程认证功能实现身份证明。CSV机密容器和普通容器的接口完全兼容，用户可以使用Docker或者Kubernetes启动机密容器，实现对容器数据的隔离和保护。CSV技术构建了以安全加密虚拟机为基础的可信执行环境。在安全加密虚拟机保证了虚拟机数据机密性的基础上，更进一步保证了虚拟机数据的完整性，主机操作系统和虚拟机管理无法通过改写虚拟机嵌套页表对虚拟机实施重映射攻击。
 
@@ -201,7 +201,7 @@ TrustZone是Arm为设备安全提供的一个安全架构，通过硬件隔离�
 
 Arm CCA 引入了一种新的机密计算世界：机密领域（Realm）。在ArmCCA中，硬件扩展被称为Realm Management Extension(RME)，RME会和被称之为机密领域管理监控器(Realm Management Monitor,RMM)，用来控制机密领域的专用固件，及在Exception level3中的 Monitor 代码交互。Realm 是一种 Arm CCA 环境，能被 Normal world 主机动态分配。主机是指能管理应用程序或虚拟机的监控软件。Realm 及其所在平台的初始化状态都可以得到验证。这一过程使 Realm 的所有者能在向它提供任何机密前就建立信任。因此，Realm 不必继承来自控制它的 Non-secure hypervisor 的信任。主机可以分配和管理资源配置,管理调度 Realm 虚拟机。然而，主机不可以监控或修改 Realm 执行的指令。在主机控制下，Realm 可以被创建并被销毁。通过主机请求，可以增加或移除页面，这与 hypervisor 管理任何其他非机密虚拟机的操作方式类似。
 
-![ARM CCA](/img/post_pics/openanolis/cca.png)
+![ARM CCA](/img/openanolis/cca.png)
 
 ArmCCA技术能够从根本上解决用户敏感应用数据的安全计算问题。它充分利用软硬件实现的信任根提供的数据和程序的物理隔离、保护、通信和认证体系，并在传统TrustZone的基础上，增加了被称为领域（Realm）的隔离区域，从最底层的安全机制和原理上解决用户程序和数据的隔离需求。
 

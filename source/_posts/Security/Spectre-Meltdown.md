@@ -2,7 +2,7 @@
 layout: post
 title: "机密计算: Spectre漏洞和原理"
 date: 2024-03-26 21:56:48
-index_img: /img/post_pics/os/spectre-meltdown.jpg
+index_img: /img/os/spectre-meltdown.jpg
 tags:
     - TEE
     - Cache
@@ -173,7 +173,7 @@ int main(int argc, const char **argv) {
 }
 ```
 
-![示意图](/img/post_pics/os/spectre.png)
+![示意图](/img/os/spectre.png)
 
 运行结果：
 

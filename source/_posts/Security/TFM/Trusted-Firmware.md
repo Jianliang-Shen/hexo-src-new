@@ -1,7 +1,7 @@
 ---
 title: ARM Trusted Firmware
 date: 2021-05-28 20:59:25
-index_img: /img/post_pics/index_img/tfm_logo.png
+index_img: /img/index_img/tfm_logo.png
 tags:
     - TF-M
     - Firmware
@@ -251,7 +251,7 @@ The goals of security model:
 
 Threat priority: Threat priority is indicated by the score calculated via Common Vulnerability Scoring System (CVSS) Version 3.1 [CVSS](https://www.first.org/cvss/calculator/3.1). The higher the threat scores, the greater severity the threat is with and the higher the priority is. CVSS scores can be mapped to qualitative severity ratings defined in CVSS 3.1 specification [CVSS_SPEC](https://www.first.org/cvss/calculator/3.1). This threat model follows the same mapping between CVSS scores and threat priority rating.
 
-![fig1](/img/post_pics/TF-M/tfm_1.png)
+![fig1](/img/TF-M/tfm_1.png)
 
 Data flow and threats:
 
@@ -307,7 +307,7 @@ How does TF-M defense or mitigate threats: please ignore the table because it is
 
 According to ARMv8-M document, the CPU has thread mode and handler mode. In handler mode, the processor has root privileges and accesses more system resources compared with thread mode. In thread mode, the processor can work with root privileges or none root privileges which is managed by nPRIV in CONTROL register. The handler mode can switch to the thread mode but the reverse process cannot complete by itself. If we want to turn the thread mode to handler mode, we need to put a processor exception.When the processor is reset, the CONTROL is cleared so it is under privileged thread mode. Most time the applications work under the 'user mode' (unprivileged thread mode) which is similar to Linux operating system.
 
-![fig2](/img/post_pics/TF-M/tfm_2.png)
+![fig2](/img/TF-M/tfm_2.png)
 The psa interface code shows:
 
 ```c
@@ -321,7 +321,7 @@ psa_handle_t psa_connect(uint32_t sid, uint32_t version)
 ```
 
 Here is a flow chart to describe the psa interfaces in IPC mode:
-![fig3](/img/post_pics/TF-M/tfm_3.png)
+![fig3](/img/TF-M/tfm_3.png)
 
 The interfaces in library mode:
-![fig4](/img/post_pics/TF-M/tfm_4.png)
+![fig4](/img/TF-M/tfm_4.png)

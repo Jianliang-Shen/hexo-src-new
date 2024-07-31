@@ -2,7 +2,7 @@
 layout: post
 title: GPU Computing Startup
 date: 2024-06-24 23:46:14
-index_img: /img/post_pics/ai/AGI.jpeg
+index_img: /img/ai/AGI.jpeg
 sticky: 100
 tags:
     - Algorithm
@@ -140,7 +140,7 @@ GPU, Compute and AI.
 
 torch.nn是专门为深度学习而设计的模块。torch.nn的核心数据结构是`Module`，它是一个抽象的概念，既可以表示神经网络中的某个层（layer），也可以表示一个包含很多层的神经网络。在实际使用中，最常见的做法是继承`nn.Module`，从而编写自己的网络/层。多层感知机的网络结构如图所示，它由两个全连接层组成，采用$sigmoid$函数作为激活函数（图中没有画出）。
 
-![神经网络](/img/post_pics/ai/multi_perceptron.png)
+![神经网络](/img/ai/multi_perceptron.png)
 
 PyTorch内部实现了神经网络中绝大多数的layer，这些layer都继承于`nn.Module`，封装了可学习参数`parameter`，并实现了`forward`函数。同时，大部分layer都专门针对GPU运算进行了CuDNN优化，其速度和性能都十分优异。关注每一层的信息有：
 
@@ -158,7 +158,7 @@ PyTorch内部实现了神经网络中绝大多数的layer，这些layer都继承
 
 {% fold @点击此处查看步骤 %}
 
-![Pytorch](/img/post_pics/ai/Pytorch.png)
+![Pytorch](/img/ai/Pytorch.png)
 
 **安装 Anaconda. 下载地址:** <https://www.anaconda.com/download>
 
@@ -417,16 +417,16 @@ docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 
 Docker Desktop中的设置：
 
-![1](/img/post_pics/ai/docker_set1.png)
-![2](/img/post_pics/ai/docker_set2.png)
+![1](/img/ai/docker_set1.png)
+![2](/img/ai/docker_set2.png)
 
 测试结果：
 
-![3](/img/post_pics/ai/docker.png)
+![3](/img/ai/docker.png)
 
 WSL中测试：
 
-![4](/img/post_pics/ai/wsl.png)
+![4](/img/ai/wsl.png)
 
 安装[cuda toolkit](https://developer.nvidia.cn/cuda-downloads)
 
@@ -496,19 +496,19 @@ git clone git@github.com:chenyuntc/pytorch-book.git
 
 VScode安装插件
 
-![](/img/post_pics/ai/torch-book-extension.png)
+![](/img/ai/torch-book-extension.png)
 
 此时打开任意一个note可以看到代码变成可以执行的框了：
 
-![](/img/post_pics/ai/vscode-load-python-1.png)
+![](/img/ai/vscode-load-python-1.png)
 
 但是会显示torch未导入，点击左侧的执行三角形按钮，会提示选择安装必要的插件，安装完成后再次点击，会提示选择python版本
 
-![](/img/post_pics/ai/vscode-load-python-11.png)
+![](/img/ai/vscode-load-python-11.png)
 
 选择python环境，找到conda路径下的python解释器
 
-![](/img/post_pics/ai/vscode-load-python-111.png)
+![](/img/ai/vscode-load-python-111.png)
 
 再次点击左侧运行，弹出要安装pykernel包，点击安装完成后，可以在右上角看到环境和python版本，也可以点击此处继续更换环境。
 

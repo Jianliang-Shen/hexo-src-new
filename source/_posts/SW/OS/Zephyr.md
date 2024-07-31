@@ -1,7 +1,7 @@
 ---
 title: 快速了解zephyr
 date: 2023-06-25 21:52:36
-index_img: /img/post_pics/index_img/Zephyr-logo.png
+index_img: /img/index_img/Zephyr-logo.png
 tags: 
     - Arm
     - RTOS
@@ -98,7 +98,7 @@ config BUILD_WITH_TFM
 west build -p auto -b mps2_an521 samples/hello_world -t run
 ```
 打开menuconfig看到
-![](/img/post_pics/os/menuconfig_zephyr.png)
+![](/img/os/menuconfig_zephyr.png)
 此时输出为：
 ```
 *** Booting Zephyr OS build zephyr-v3.3.0-1195-g9a759025d912 ***
@@ -106,7 +106,7 @@ Hello World! mps2_an521
 ```
 
 ### musca_s1开发板
-![](/img/post_pics/os/v2m_musca_s1.jpg)
+![](/img/os/v2m_musca_s1.jpg)
 板载资源可以在[Musca S1](https://docs.zephyrproject.org/latest/boards/arm/v2m_musca_s1/doc/index.html)找到，下载镜像，直接拷贝到存储区
 
 ```
@@ -121,7 +121,7 @@ Hello World! musca_s1
 ```
 
 ### Nucleo开发板
-![](/img/post_pics/os/nucleo_l552ze_q.jpg)
+![](/img/os/nucleo_l552ze_q.jpg)
 板载资源参考：[ST Nucleo L552ZE Q](https://docs.zephyrproject.org/latest/boards/arm/nucleo_l552ze_q/doc/nucleol552ze_q.html)，因为mac下载pyocd太慢装不了该板子的pack，选择runner openocd来下载镜像。编译时打开：
 ```
 brew install openocd
@@ -360,7 +360,7 @@ K_THREAD_DEFINE(uart_out_id, STACKSIZE, uart_out, NULL, NULL, NULL, PRIORITY, 0,
 
 #### 线程状态
 
-zephyr的线程状态：![](/img/post_pics/os/thread_states.svg)
+zephyr的线程状态：![](/img/os/thread_states.svg)
 
 #### 线程特性
 
@@ -416,7 +416,7 @@ void main(void)
 * Red/black tree ready queue (CONFIG_SCHED_SCALABLE)
 * Traditional multi-queue ready queue (CONFIG_SCHED_MULTIQ)
 
-![](/img/post_pics/os/cooperative.svg)
+![](/img/os/cooperative.svg)
 其他相关：
 * [抢占式线程](https://docs.zephyrproject.org/latest/kernel/services/scheduling/index.html#preemptive-time-slicing)
 * [调度锁](https://docs.zephyrproject.org/latest/kernel/services/scheduling/index.html#scheduler-locking)，只执行当前线程

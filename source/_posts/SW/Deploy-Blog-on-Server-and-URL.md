@@ -1,7 +1,7 @@
 ---
 title: hexo部署博客并上传到域名上
 date: 2019-06-29 09:07:19
-index_img: /img/post_pics/index_img/hexo_index.png
+index_img: /img/index_img/hexo_index.png
 tags: 
     - Hexo
     - Linux
@@ -257,7 +257,7 @@ server {
 
 因为腾讯云服务器并没有开放端口无法外部ping通，因此需要在“安全规则中”开放端口，如下所示：  
   
-![fig1](/img/post_pics/Front/front1.png)
+![fig1](/img/Front/front1.png)
 
 ### 设置Hexo仓库
 
@@ -278,7 +278,7 @@ hexo d -g
 
 例如aliyun的域名解析设置如下：  
   
-![fig2](/img/post_pics/Front/front2.png)
+![fig2](/img/Front/front2.png)
 
 ### 域名备案
 

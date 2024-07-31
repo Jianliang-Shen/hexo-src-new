@@ -1,7 +1,7 @@
 ---
 title: 编译内核用到的图形界面工具
 date: 2019-07-22 17:48:33
-index_img: /img/post_pics/index_img/menuconfig.png
+index_img: /img/index_img/menuconfig.png
 tags:
     - Linux
     - Kernel
@@ -40,7 +40,7 @@ apt-get install qt4-dev-tools
 ```
 
 安装后运行如下：  
-![](/img/post_pics/ui/xconfig.png)
+![](/img/ui/xconfig.png)
 
 ## gconfig
 
@@ -56,4 +56,4 @@ sudo apt-get install libgtk2.0-dev libglib2.0-dev libglade2-dev
 ```
 
 安装后运行如下：  
-![](/img/post_pics/ui/gconfig.png)
+![](/img/ui/gconfig.png)

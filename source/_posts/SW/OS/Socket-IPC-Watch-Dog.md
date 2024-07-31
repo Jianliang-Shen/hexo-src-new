@@ -1,7 +1,7 @@
 ---
 title: socket进程间通信及喂狗框架
 date: 2019-09-13 23:24:34
-index_img: /img/post_pics/index_img/tcpip_index.png
+index_img: /img/index_img/tcpip_index.png
 tags: 
     - Linux
     - Net
@@ -749,9 +749,9 @@ int send_wdt(int sock, char *source_name)
 ### 运行框图
 
 服务端  
-![](/img/post_pics/tcpip/服务器软件框图.bmp)
+![](/img/tcpip/服务器软件框图.bmp)
 客户端  
-![](/img/post_pics/tcpip/客户端软件框图.bmp)
+![](/img/tcpip/客户端软件框图.bmp)
 
 ## 守护脚本
 
@@ -801,7 +801,7 @@ exit 0
 
 ## 实现结果
 
-![](/img/post_pics/tcpip/socket服务器运行结果.JPG)
+![](/img/tcpip/socket服务器运行结果.JPG)
 
 ```
 [client1] Creating recv thread...                                   #客户端建立接收线程

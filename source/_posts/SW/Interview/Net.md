@@ -142,7 +142,7 @@ categories:
       * 校验过程：
   
   
-![](/img/post_pics/net/csnet_udp.PNG)
+![](/img/net/csnet_udp.PNG)
   
 * TCP协议：
   * 特点：
