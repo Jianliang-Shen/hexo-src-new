@@ -15,6 +15,7 @@ categories:
 
 <!-- more -->
 
+[AMD 放CPU能让Instinct MI300A APU打败GPU吗？](https://zhuanlan.zhihu.com/p/671570798)
 [2024 英伟达 GTC 会议纪要（节选)](https://mp.weixin.qq.com/s/99t-0uavpbkLYhSecw4_tA)
 [一张图看懂 CPU、GPU、NPU](https://mp.weixin.qq.com/s/OdQBrDhMSJ4Kq3jRrRPOmg)
 [谈谈大模型推理 KV-Cache 加速和内存池化](https://mp.weixin.qq.com/s/FD6GLPHENrDE23R20T7ayA)
