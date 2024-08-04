@@ -54,6 +54,53 @@ SYSTEM_PROMPT="You are a helpful assistant."
 -p "<|start_header_id|>system<|end_header_id|>\n\n$SYSTEM_PROMPT\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n$FIRST_INSTRUCTION\n\n<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
 ```
 
+TODO: Debug the llama.cpp.
+
+## Install ChatTTs
+
+I choose [ChatTTS](https://github.com/2noise/ChatTTS) to create the dialogue.
+
+- [ChatTTS Homepage](https://chattts.com/zh)
+
+```bash
+git clone git@github.com:2noise/ChatTTS.git
+cd ChatTTS
+
+# I have already create the Conda environment
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+python examples/web/webui.py # Need download models manually: https://huggingface.co/2Noise/ChatTTS
+```
+
+A basic test:
+
+```py
+import ChatTTS
+import torch
+import torchaudio
+
+chat = ChatTTS.Chat()
+chat.load(compile=False) # Set to True for better performance
+
+texts = ["你好，欢迎来到上海", "你好，我是你的私人助理"]
+
+wavs = chat.infer(texts)
+
+for i in range(len(wavs)):
+    torchaudio.save(f"basic_output{i}.wav", torch.from_numpy(wavs[i]).unsqueeze(0), 24000)
+```
+
+In WSL, we need to play the .wav. Use VLC to easily open and play it:
+
+```bash
+# Ref: https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps
+sudo apt install vlc -y
+cvlc basic_output0.wav # will not create a window.
+```
+
+TODO: Learn advanced usage of this tool. Another way is alibaba cloud TTS.
+
+- [ChatTTS进阶篇（适用于win/linux/wsl）](https://blog.csdn.net/imok1234567/article/details/140192207)
+
 ## Reference
 
 - [Llama.cpp 上手实战指南](https://blog.yanghong.dev/llama-cpp-practice/)
