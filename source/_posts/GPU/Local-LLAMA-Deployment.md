@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Llama 本地化部署
-index_img: /img/ai/llama1-logo.png
+index_img: /img/ai/llama.jpeg
 date: 2024-07-23 16:10:26
 sticky: 110
 tags:

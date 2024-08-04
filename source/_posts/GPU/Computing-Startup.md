@@ -22,6 +22,7 @@ GPU, Compute and AI.
 
 - [目录](#目录)
 - [资料汇总](#资料汇总)
+- [论文](#论文)
 - [pytorch 知识点整理](#pytorch-知识点整理)
 - [安装 pytorch cpu 版本](#安装-pytorch-cpu-版本)
 - [安装 pytorch cuda 版本](#安装-pytorch-cuda-版本)
@@ -102,6 +103,10 @@ GPU, Compute and AI.
 <iframe src="https://docs.nvidia.com/cuda/" width="100%" height="800" name="topFrame" scrolling="yes"  noresize="noresize" frameborder="0" id="topFrame"></iframe>
 
 {% endfold %}
+
+## 论文
+
+[Attention is All Your Need 中英对照](https://www.yiyibooks.cn/yiyibooks/Attention_Is_All_You_Need/index.html)
 
 ## pytorch 知识点整理
 

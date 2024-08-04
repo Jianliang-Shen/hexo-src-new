@@ -1135,6 +1135,24 @@ links:
       link: "https://hexo.fluid-dev.com/docs/start/",
       avatar: "/img/icon/fluid.png"
     }
+    - {
+      title: "CS2018",
+      intro: "CS-Notes 面试笔记",
+      link: "https://www.cyc2018.xyz",
+      avatar: "/img/icon/cs2018.jpeg"
+    }
+    - {
+      title: "阿秀",
+      intro: "学习笔记",
+      link: "https://interviewguide.cn",
+      avatar: "/img/icon/xiu.png"
+    }
+    - {
+      title: "小林Coding",
+      intro: "小林 x 图解计算机基础",
+      link: "https://xiaolincoding.com",
+      avatar: "/img/icon/xiaolin.png"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image

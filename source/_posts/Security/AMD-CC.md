@@ -1,6 +1,7 @@
 ---
 layout: post
-title: AMD CC
+title: "机密计算: AMD 解决方案"
+index_img: /img/cc/amd/amd-cc-index.jpeg
 date: 2024-08-01 20:29:31
 tags: 
     - TEE
@@ -12,7 +13,10 @@ categories:
 
 转载：[AMD机密计算解决方案分析](https://blog.csdn.net/huang987246510/article/details/135707747)
 
+<!-- more -->
+
 [水印去除](https://www.mindonmap.com/zh/watermark-remover-online/#)
+
 ## 数据结构
 
 AMD SEV机密计算场景下，Hypervisor的职能稍有改变，可以概括为以下三点：

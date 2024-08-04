@@ -3,6 +3,9 @@ title: PDF Summary
 layout: pdf
 ---
 
+- AI
+  - [<u>**Attention is All Your Need**</u>](/pdf/AI/Attention-is-all-your-need.pdf)
+  - [<u>**Attention is All Your Need 中文版**</u>](/pdf/AI/Attention-is-all-your-need-ZH.pdf)
 - 机密计算
   - [<u>**2023年龙蜥社区: 云原生机密计算最佳实践白皮书**</u>](/pdf/cc/2023云原生机密计算最佳实践白皮书.pdf)
   - [<u>**2023年 Intel: 机密计算ISV支持程序包**</u>](/pdf/cc/机密计算ISV支持程序包.pdf)
