@@ -3,6 +3,7 @@ layout: post
 title: "机密计算: 通用框架概要"
 index_img: /img/cc/cc_index.jpg
 date: 2024-07-11 13:38:25
+archive: true
 tags: 
     - TEE
     - Confidential Compute

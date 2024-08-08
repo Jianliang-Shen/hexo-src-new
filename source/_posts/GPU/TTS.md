@@ -54,7 +54,7 @@ python examples/web/webui.py
     "pic=/img/ai/tts/index.png" //设置封面图，同样是放在根目录下面
     "loop=yes"                  //循环播放
     "theme=#FADFA3"             //主题
-    "autoplay=true"             //自动播放
+    "autoplay=false"             //自动播放
     "screenshot=true"           //允许截屏
     "hotkey=true"               //允许hotKey，比如点击空格暂停视频等操作
     "preload=auto"              //预加载：auto

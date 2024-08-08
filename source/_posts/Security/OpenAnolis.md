@@ -3,6 +3,7 @@ layout: post
 title: "龙蜥社区: 云原生机密计算最佳实践"
 index_img: /img/openanolis/index.png
 date: 2024-07-29 14:37:13
+archive: true
 tags:
     - TEE
     - Confidential Compute

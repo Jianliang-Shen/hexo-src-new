@@ -3,6 +3,7 @@ layout: post
 title: "机密计算: AMD 解决方案"
 index_img: /img/cc/amd/amd-cc-index.jpeg
 date: 2024-08-01 20:29:31
+archive: true
 tags: 
     - TEE
     - Confidential Compute

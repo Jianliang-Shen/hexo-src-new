@@ -3,6 +3,7 @@ layout: post
 title: SDMA 3D 拷贝底层机理
 index_img: /img/gpu/sdma/index.png
 date: 2024-05-17 20:00:44
+archive: true
 tags: 
     - DMA
 categories: 
