@@ -47,6 +47,7 @@ python examples/web/webui.py
 
 示例结果：
 
+<!-- 参考 https://dplayer.diygod.dev/zh/ -->
 {%
     dplayer
     "url=/img/ai/tts/audio.mp3" //设置视频目录，这里我放在了网站根目录下面，也就是public目录下面

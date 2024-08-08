@@ -4,6 +4,7 @@ title: LLM 算法分析
 index_img: /img/gpt/index.jpg
 date: 2024-08-07 13:49:09
 archive: false
+math: true
 tags:
     - AI
     - GPU
@@ -16,7 +17,7 @@ categories:
 
 <!-- more -->
 
-# AI演化趋势
+## AI演化趋势
 
 AI模型规模越来越庞大，越来越简洁，人工参与度要求越来越低，和硬件发展相匹配。
 
@@ -52,11 +53,11 @@ AI模型规模越来越庞大，越来越简洁，人工参与度要求越来越
 
 ![LLM 应用](/img/gpt/llmApp.png)
 
-# 神经网络简介
+## 神经网络简介
 
 ![神经网络](/img/gpt/nn.png)
 
-# 残差神经网络
+## 残差神经网络
 
 解决退化问题
 
@@ -69,7 +70,7 @@ AI模型规模越来越庞大，越来越简洁，人工参与度要求越来越
 
 ![算子](/img/gpt/res.png)
 
-# 编码器与解码器
+## 编码器与解码器
 
 Seq2Seq : RNN, LSTM, Transformer
 
@@ -77,16 +78,70 @@ Seq2Seq : RNN, LSTM, Transformer
 
 ![Encode & Decoder](/img/gpt/encdec.gif)
 
-# LLM 分类
+## LLM 分类
 
 {% gi 2 2 %}
   ![Attention 架构](/img/gpt/attention.png)
   ![分类](/img/gpt/class.jpg)
 {% endgi %}
 
-# Encoder & Decoder功能对比
+## Encoder & Decoder功能对比
 
 - Masked Language Model （BERT Training）
 - Next Token Generation （GPT）：我爱北京天安，计算出下一个字 “门”
 
 ![bert](/img/gpt/bert.png)
+
+## Attention 介绍
+
+Attention is all you need!
+
+![Bert VS GPT](/img/gpt/bertVSgpt.png)
+
+$$
+Attention=Softmax(QK^𝑇)𝑉
+$$
+
+![Attention](/img/gpt/qkv1.png)
+
+归一化，权重系数，突出主要因子
+
+$$
+Softmax([𝑣1,𝑣2,𝑣3,…,𝑣𝑛])= \frac{[𝑒^{𝑣1}, 𝑒^{𝑣2}, 𝑒^{𝑣3}, …, 𝑒^{𝑣3}]}{𝑒^{𝑣1} + 𝑒^{𝑣2} + 𝑒^{𝑣3} + … + 𝑒^{𝑣𝑛}}
+$$
+
+例如：
+
+$$
+Softmax([1,−∞,0,2,5])=[0.01704,0,0.00627,0.04632,0.93037]
+$$
+
+**Decode-only: 每个 Token 都只依赖历史信息而不依赖未来信息。**可以通过使用 `KV-cache` 极大降低generation过程计算量 – Memory Bound
+
+更多：
+
+- [一文讲透预训练模型的改进训练算法 ，轻松达到State of the Art](https://cloud.tencent.com/developer/article/1609905)
+- [BERT模型的详细介绍](https://blog.csdn.net/weixin_44799217/article/details/115374101)
+- [transformer 中: self-attention 部分是否需要进行 mask？](https://www.cvmart.net/community/detail/5137?hmsr=joyk.com&utm_source=joyk.com&utm_medium=referral)
+- [学习笔记：基于Transformer的时间序列预测模型](https://pythonziliao.com/post/758.html)
+- [**Transformers源码学习**](https://qiankunli.github.io/2023/09/04/llm_source.html)
+- [从self-attention到transformer的超详细的算法解析和主流论文研究分享](https://duanmofan.com/archives/self-attention2transformer)
+- [This post is all you need（①多头注意力机制原理）](https://juejin.cn/post/6982152969969991711)
+
+## 非线性激活函数
+
+![非线性变换](/img/gpt/非线性变换.png)
+
+目标，通过非线性变换把的分界线拉直；更高的维度提供了更多的弯曲变换机会。
+
+![GPT3 先将输入升维度再降维度](/img/gpt/维度.png)
+
+Transformer中 Feedforwad 部件，Elementwise 激活函数（Tensor中每个元素独立进行相同的非线性运算）
+
+- GPT3使用 [ReLU](https://pytorch.org/docs/stable/generated/torch.nn.ReLU.html#relu) 算子
+- Llama2 使用[SwiGLU](https://zhuanlan.zhihu.com/p/650237644)算子，带有参数
+
+{% gi 2 2 %}
+  ![ReLU](/img/gpt/relu.png)
+  ![SwiGLU](/img/gpt/swiglu.png)
+{% endgi %}
