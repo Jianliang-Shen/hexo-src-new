@@ -8,7 +8,7 @@ tags:
     - GPU
     - LLM
 categories: 
-    - GPU
+    - AI
 ---
 
 [Stable Diffusion](https://github.com/Stability-AI/stablediffusion)

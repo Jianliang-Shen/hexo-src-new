@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ChatTTS 语音合成试用
+title: ChatTTS
 index_img: /img/ai/tts/index.png
 date: 2024-08-07 23:30:47
 tags:
@@ -8,7 +8,7 @@ tags:
     - AI
     - TTS
 categories: 
-    - GPU
+    - AI
 ---
 
 [ChatTTS](https://github.com/2noise/ChatTTS) 是一个用于对话场景的文本转语音的强大工具
@@ -25,7 +25,7 @@ categories:
 git clone git@github.com:2noise/ChatTTS.git
 cd ChatTTS
 
-# 使用 https://www.jianliang-shen.cn/2024/06/24/GPU/Computing-Startup/#%E5%AE%89%E8%A3%85-pytorch-cuda-%E7%89%88%E6%9C%AC 已经创建好的 conda-gpu 环境
+# 使用 https://www.jianliang-shen.cn/2024/06/24/AI/Computing-Startup/ 已经创建好的 conda-gpu 环境
 pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # 以下是为适配 GPU，可以快速生成

@@ -3,7 +3,7 @@ layout: post
 title: 国产 RISC-V
 index_img: /img/riscv/index.jpg
 date: 2024-08-07 11:26:27
-archive: false
+archive: true
 tags:
     - RISCV
     - RTOS

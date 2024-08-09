@@ -6,12 +6,12 @@ index_img: /img/ai/AGI.jpeg
 sticky: 100
 tags:
     - Algorithm
-    - AI
     - CUDA
     - Pytorch
+    - AI
     - GPU
 categories: 
-    - GPU
+    - AI
 ---
 
 GPU, Compute and AI.

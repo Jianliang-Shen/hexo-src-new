@@ -1,15 +1,16 @@
 ---
 layout: post
-title: Code Structure of Llama.cpp
+title: Analysis Llama.cpp
 date: 2024-08-04 11:45:51
 index_img: /img/ai/llama-cpp.png
+sticky: 105
 tags:
     - AI
     - GPU
     - LLM
     - LLAMA
 categories: 
-    - GPU
+    - AI
 ---
 
 This blog is about the code structure analysis of `llama.cpp` project.
@@ -40,7 +41,7 @@ We could easily found the `llama` library in `src/CMakeLists.txt`, it is built b
 
 Let's dive into the `main.cpp` to find how it woks.
 
-In the [chat_llama3.sh](https://www.jianliang-shen.cn/2024/07/23/GPU/Local-LLAMA-Deployment/)
+In the [chat_llama3.sh](https://www.jianliang-shen.cn/2024/07/23/AI/Local-LLAMA-Deployment/):
 
 ```bash
 FIRST_INSTRUCTION=$2
@@ -54,7 +55,7 @@ SYSTEM_PROMPT="You are a helpful assistant."
 -p "<|start_header_id|>system<|end_header_id|>\n\n$SYSTEM_PROMPT\n\n<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n$FIRST_INSTRUCTION\n\n<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
 ```
 
-## Debug main.cpp
+### Debug main.cpp
 
 Firstly, we need to compile in Debug mode. We can see `-g` in the `CXXFLAGS`.
 

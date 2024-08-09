@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Llama 本地化部署
+title: Llama Local Deployment
 index_img: /img/ai/llama.jpeg
 date: 2024-07-23 16:10:26
 sticky: 110
@@ -10,7 +10,7 @@ tags:
     - LLM
     - LLAMA
 categories: 
-    - GPU
+    - AI
 ---
 
 Chinese-LLaMA-Alpaca 是基于 Meta 发布的可商用大模型 Llama 开发，llama.cpp 是一个 C++ 语言部署 Llama 的框架。

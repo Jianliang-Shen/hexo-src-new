@@ -7,10 +7,11 @@ archive: false
 math: true
 tags:
     - AI
+    - GPT
     - GPU
     - LLM
 categories: 
-    - GPU
+    - AI
 ---
 
 一文了解 GPT 推理原理。
